@@ -1,65 +1,190 @@
-       
+
 <div class="container">
+    <h2>Contacteer ons: </h2>
 
-  <h2>Contacteer ons:</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-  <form #form="ngForm">
+      <div class="form-group">
+          <label>Naam en Voornaam</label>
+          <input type="text" name="name" id="name" class="form-control" required [(ngModel)]="contactSettings.name"
+              required #nameField="ngModel" 
+              (blur)="onBlur(nameField)"
+              [class.field-error]="form.submitted && nameField.invalid">
+        <div [hidden]="!form.submitted || nameField.valid"
+          class="alert alert-danger">
+          Geef je naam in
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input id="name" name="name" class="form-control" [(ngModel)]="ContactSettings.name" />
-    </div>
 
-    <div class="form-check form-group">
-      <input class="form-check-input" type="checkbox" id="emailOffers" name="emailOffers"
-        [(ngModel)]="ContactSettings.emailOffers">
-      <label class="form-check-label" for="emailOffers">
-        Email Special Offers
-      </label>
-    </div>
+  
 
-    <p>User Interface Style</p>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" value="light"
-          [(ngModel)]="ContactSettings.interfaceStyle">
-        <label class="form-check-label" for="lightInterface">
-          Light
+
+      <div class="form-check form-group">
+        <input class="form-check-input" type="checkbox"
+                id="emailOffers" name="emailOffers" [(ngModel)]="contactSettings.emailOffers">
+        <label class="form-check-label" for="emailOffers">
+          Email Special Offers
         </label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interfaceStyle" id="mediumInterface" value="medium"
-          [(ngModel)]="ContactSettings.interfaceStyle">
-        <label class="form-check-label" for="mediumInterface">
-          Medium
-        </label>
+
+      <p>User Interface Style</p>
+      <div class="form-group">
+
+        <div class="btn-group">
+          <label class="btn btn-primary" [(ngModel)]="contactSettings.interfaceStyle" name="interfaceStyle"
+                  btnRadio="Light" tabindex="0" role="button">Light</label>
+          <label class="btn btn-primary" [(ngModel)]="contactSettings.interfaceStyle" name="interfaceStyle"
+                  btnRadio="Medium" tabindex="0" role="button">Medium</label>
+          <label class="btn btn-primary" [(ngModel)]="contactSettings.interfaceStyle" name="interfaceStyle"
+                  btnRadio="Dark" tabindex="0" role="button">Dark</label>
+        </div>
+        
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interfaceStyle" id="darkInterface" value="dark"
-          [(ngModel)]="ContactSettings.interfaceStyle">
-        <label class="form-check-label" for="darkInterface">
-          Dark
-        </label>
+
+
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" class="form-control" 
+                  rows="3" [(ngModel)]="contactSettings.notes"></textarea>
+      </div>      
+
+      <div [hidden]="!postError"
+          class="alert alert-danger">
+          {{ postErrorMessage }}
       </div>
+      <button class="btn btn-primary">Send</button>
+    </form>
+  </div>
+  <form name="my-form" action="#" method="get">
+    <div class="form-box">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" placeholder="name">
     </div>
-
-    <div class="form-group">
-      <label for="subscriptionType">Subscription Type</label>
-      <select class="form-control" id="subscriptionType" name="subscriptionType"
-        [(ngModel)]="ContactSettings.subscriptionType">
-        <option>Monthly</option>
-        <option>Annual</option>
-        <option>Lifetime</option>
-      </select>
+    <div class="form-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
     </div>
-
-    <div class="form-group">
-      <label for="notes">Notes</label>
-      <textarea id="notes" name="notes" class="form-control" rows="3" [(ngModel)]="ContactSettings.notes"></textarea>
+    <div class="form-box">
+        <label for="mobile">GSM/Tel</label>
+        <input type="mobile" id="mobile" name="mobile" placeholder="mobile" required>
     </div>
+    <div class="form-box">
+        <label for="onderwerp">Onderwerp</label>
+        <select id="onderwerp" name="onderwerp">
+            <option value="aansluiting">Aansluiting bij de club</option>
+            <option value="lidgeld">Lidgeld</option>
+            <option value="ongeval">Aangifte sportongeval</option>
+            <option value="andere">Andere</option>
+        </select>
+    </div>
+    <div class="form-box">
+        <label for="message"></label>
+        <textarea name="message" id="message" rows="10" cols="30">Uw bericht ...</textarea>
+    </div>
+    <div class="form-box">
+        <button id="btnSend">Verzenden</button>
+    </div>
+</form>
 
-    <button class="btn btn-primary">Send</button>
-  </form>
-</div>
+<section id="contact-info">
+    <div class="center">                
+        <h2>Kom eens kijken !</h2>
+        <p class="lead">Onze wedstijden en trainingen gaan door in de sporthallen "de Kimpel" en "de Zonhoeve". </p>
+    </div>
+    <div class="gmap-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <div class="gmap">
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16938.92867239573!2d5.500980233994034!3d50.86844389151263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0e0b9fd62add3%3A0xfb1038a7e0c9a39f!2scultuurcentrum+de+kimpel+Bilzen!5e0!3m2!1snl!2sbe!4v1455882621863" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
 
-<h3>{{ ContactSettings| json }}</h3>
+                <div class="col-sm-7 map-content">
+                    <ul class="row">
+                        <li class="col-sm-8">
+                            <address>
+                                <h5>Sporthal de Kimpel</h5>
+                                <p>Eikenlaan 25 <br>
+                                3740 Bilzen</p>
+                                <i class="fa fa-phone"> 089/51.95.30</i><br>
+                                <i class="fa fa-facebook-square"><a class="black" href="http://www.facebook.com/SportcentrumDeKimpelBilzen" target="_blank"> www.facebook.com/SportcentrumDeKimpelBilzen</a></i>
+                            </address>
+
+                            <address>
+                                <h5>Sporthal de Zonhoeve</h5>
+                                <p>Zonhoevestraat 3 <br>
+                                3740 Bilzen</p>                                
+                                <i class="fa fa-phone"> 089/41.69.61 </i><br>
+                                <i class="fa fa-facebook-square"><a class="black" href="http://www.facebook.com/dezonhoeve" target="_blank"> www.facebook.com/dezonhoeve</a></i>
+                            </address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  <!--/gmap_area -->
+<section id="contact-page">
+    <div class="container">
+        <div class="center">  
+            <p> &nbsp</p>
+            <h2>Contacteer ons:</h2>                
+        </div>     
+
+        <div class="row contact-wrap"> 
+            <div class="status alert alert-success" style="display: none"></div>
+        <form action="index.php?id=2#naarbeneden" method="post" class="contact-form" name="contact-form"> 
+        <a name="naarbeneden"></a> 
+
+            <div class="col-sm-5 col-sm-offset-1">
+                                <input type="hidden" name="nospam:blank" value="" />
+                                
+                                <div class="form-group">
+                                    <label>Naam en Voornaam</label><label style="color:red;"> *</label>
+                                    <input type="text" name="name" id="name" class="form-control" required="required" value="" />
+                                </div>
+                                
+                                 <div class="form-group">
+
+                                    <label>Email</label><label style="color:red;"> *</label>
+                                    <input type="email" name="email" class="form-control" required="required" value="" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Telefoon</label>
+                                    <input type="text" name="telephone" class="form-control" value="" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Mobiel</label>
+                                    <input type="text" name="mobile" class="form-control" value="" />
+                                </div>
+                                </div>
+                        <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label>Onderwerp</label><label style="color:red;"> *</label>
+                                    <input type="text" name="subject" class="form-control" required="required" value="" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Bericht</label><label style="color:red;"> *</label>
+                                    <textarea name="message" id="message" class="form-control" rows="8" required="required" value=""></textarea>
+                                </div>
+                                
+                               
+                                <input type="hidden" name="workemail" value=""/> 
+                                    <div class="form-group">
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg">Bericht Verzenden</button>
+                                    </div>
+                          
+             </div>  
+        </form>
+    
+             
+        </div><!--/.row-->
+        
+        
+    </div><!--/.container-->
+</section><!--/#contact-page-->

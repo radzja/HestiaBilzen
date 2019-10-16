@@ -1,3 +1,66 @@
 .field-error {
     border: 1px solid red;
 }
+
+select, option, input, label,textarea, button{
+    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+    color: inherit;
+}
+.form-box{
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.form-box label{
+    display: none;
+}
+.form-box input,
+.form-box select,
+.form-box textarea{
+    flex-basis: 100%;
+}
+.form-box button{
+    
+}
+
+/*******************************
+        Media Queries
+*******************************/
+@media all and (min-width: 500px){
+    .form-box{
+        
+    }
+    .form-box label{
+        display: block;
+    }
+    .form-box input,
+    .form-box select,
+    .form-box textarea{
+        
+    }
+    .form-box button{
+
+    }
+}
+
+@media all and (min-width: 600px){
+    .form-box{
+        flex-direction: row;
+    }
+    .form-box label{
+        flex-basis: 9rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .form-box input,
+    .form-box select,
+    .form-box textarea{
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .form-box button{
+        margin-left: 9rem;
+    }
+}

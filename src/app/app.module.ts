@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactformComponent } from './contactform/contactform.component';
+import { ContactFormComponent } from './contactform/contactform.component';
 import { CalenderComponent } from './calender/calender.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { SporthallenComponent } from './sporthallen/sporthallen.component';
+import { DocumentenComponent } from './documenten/documenten.component';
+import { TeamsComponent } from './teams/teams.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactformComponent,
-    CalenderComponent
+    ContactFormComponent,
+    CalenderComponent,  
+    PageNotFoundComponent,  
+    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent
   ],
   imports: [
     BrowserModule,
