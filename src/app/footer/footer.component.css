@@ -1,0 +1,14 @@
+#footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    background: #2e2e2e;
+  }
+  
+  #footer a {
+    color: #fff !important;
+  }
+  
+  #footer a:hover {
+    color: #0069B2;
+  }

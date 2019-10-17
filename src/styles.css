@@ -1,1 +1,248 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  text-align: left;
+}
+  
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+  line-height: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600; 
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+}
+  
+h1 {
+  font-size: 36px;
+  color:#fff;
+}
+
+h2 {
+  font-size: 20px;
+  color:#fff;
+}
+ 
+h3 {
+  font-size: 16px;
+  color: #787878;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h4{
+  font-size: 16px;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+}
+  
+a:hover, a:focus {
+  color: #0069B2;
+}
+  
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img {
+  border: 0;
+}
+
+
+  /********** Begin head **********/
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background: #191919;
+  border-bottom: 1px solid #222;
+  line-height: 28px;
+  color: #fff;
+  list-style: none;
+}
+  
+.topbar-right {
+  display: inline-flex;
+}   
+
+.header-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.sociale_media {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+ul.sociale_media li a {
+  display: inline-block;
+  color: #fff;
+  background: #404040;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 2px;   
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+}
+/********** begin Body **********/
+.back_img {
+  background-image: url(src\assets\images\bg1.jpg);
+  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0 !important;
+  max-width: 100%;
+  
+  
+ 
+  display: block !important;
+  height: 730px;
+
+}
+
+
+
+
+
+
+/********** Begin header **********/
+
+  .header {
+    background: tomato;
+  }
+  
+  .btn-primary {
+    padding: 8px 20px;
+    background: #0069B2;
+    color: #fff;
+    border-radius: 4px;
+    border:none;
+    margin-top: 10px;
+  }
+  
+  
+  .btn-primary:hover, 
+  .btn-primary:focus{
+    background: #333;
+    outline: none;
+    box-shadow: none;
+  } 
+  
+  .btn-transparent {
+    border: 3px solid #fff;
+    background: transparent;
+    color: #fff;
+  }
+  
+  .btn-transparent:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .aside-1 {
+    background: gold;
+  }
+  
+  .aside-2 {
+    background: hotpink;
+    text-align: right;
+  }
+ /********** Begin sponsors **********/
+.sponsors{
+  color: #fff;
+  text-align: center;
+  background: #151515;
+}
+
+.h2 {
+  color:white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  /********** Begin footer **********/
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    background: #2e2e2e;
+  }
+    
+ 
+  
+
+  /********** Begin media instellingen **********/
+
+
+  @media all and (min-width: 576px) {
+    .aside { flex: 1 0 0; }
+  }
+  
+  @media all and (min-width: 768px) {
+    
+    .aside-1 { order: 1; } 
+    .aside-2 { order: 2; }
+    .sponsors{ order: 3;  }
+    .footer  { order: 4; }
+  }
+  
+  body {
+    padding: 0.3ng em; 
+  }
+
+

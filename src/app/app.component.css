@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  #main > article {
+    flex: 1;
+  }
+  #main > nav, 
+
+  header, footer {
+    background: yellowgreen;
+    height: 20vh;
+  }
+  header, footer, article {
+    padding: 1em;
+  }
+
+
+  #footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    background: #2e2e2e;
+    list-style: none;
+  }
+
+  #footer a {
+    color: #fff !important;
+  }
+  
+ 

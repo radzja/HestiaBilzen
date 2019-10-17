@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CalenderComponent } from './calender/calender.component';
+import { KalenderComponent } from './kalender/kalender.component';
 import { SporthallenComponent } from './sporthallen/sporthallen.component';
 import { DocumentenComponent } from './documenten/documenten.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 const routes: Routes = [
        { path: 'home', component: HomeComponent },
-       { path: 'calender', component: CalenderComponent },
+       { path: 'kalender', component: KalenderComponent },
        { path: 'sporthallen', component: SporthallenComponent },
        { path: 'documenten', component: DocumentenComponent },
        { path: 'teams', component: TeamsComponent },
