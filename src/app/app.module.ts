@@ -13,6 +13,8 @@ import { SporthallenComponent } from './sporthallen/sporthallen.component';
 import { DocumentenComponent } from './documenten/documenten.component';
 import { TeamsComponent } from './teams/teams.component';
 import { KalenderComponent } from './kalender/kalender.component';
+import { SponsorsComponent } from './sponsors/sponsors.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { KalenderComponent } from './kalender/kalender.component';
     ContactFormComponent,
     CalenderComponent,  
     PageNotFoundComponent,  
-    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent
+    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background: #191919;
+  border-bottom: 1px solid #0069b2;
+  line-height: 10px;
+  color: #fff;
+  list-style: none;
+  height: 40px;
+}
+
+.header-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}

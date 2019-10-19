@@ -1,0 +1,12 @@
+.back_img {
+  background-image: url(src\assets\images\bg1.jpg);
+  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0 !important;
+  max-width: 100%;
+  display: block !important;
+  height: 730px;
+}

@@ -1,0 +1,26 @@
+.sponsors {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  background: #151515;
+  border-bottom: 5px solid #0069B2;
+  padding-top: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background: #151515;
+  justify-content: space-evenly;
+  margin: 0 100px;
+}
+
+.flex-container>div {
+  width: 250px;
+}
+
+img {
+  vertical-align: middle;
+  height: 70%;
+  border: 0;
+}
