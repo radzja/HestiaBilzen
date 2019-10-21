@@ -1,116 +1,152 @@
 .field-error {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
-.contact-info i{
-    width: 60px;
-    height: 60px;
-    font-size: 40px;
-    line-height: 60px;
-    color: #fff;
-    background: #000;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .gmap-area {
-    background-image: url("/src/assets/images/map.jpg");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 70px 0;
-  }
-  
-  .gmap-area .gmap iframe {
-    border-radius: 50%;
-    height: 280px;
-    width: 300px;
-  }
-  
-  .gmap{
-      border: 10px solid #f6f5f0;
-      border-radius: 50%;
-      height: 300px;
-      width: 300px;
-      box-shadow: 0px 0px 3px 3px #e7e4dc;
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-  }
-  
-  .gmap-area .map-content ul {
-    list-style: none; 
-  }
-  
-  .gmap-area .map-content address h5{
-    font-weight: 700;
-    /* font-size: 16px; */
-  }
-
-
-
-
-
-
-select, option, input, label,textarea, button{
-    padding: 0.2rem 1rem;
-    font-size: 1.2rem;
-    color: inherit;
+.center {
+  text-align: center;
+  padding-bottom: 30px;
 }
-.form-box{
-    padding: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
+
+.center h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+  margin-top: 20px;
 }
-.form-box label{
-    display: none;
+
+.gmap-area {
+  background-image: url(src\assets\images\map.jpg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 70px 0;
 }
+
+.gmap-area .gmap iframe {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  text-align: right;
+}
+
+.gmap {
+  border: 10px solid #f6f5f0;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0px 0px 3px 3px #e7e4dc;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.flex-container>div {
+  margin: 10px;
+}
+
+.address {
+  padding: 60px;
+}
+
+.address a {
+  color: #4e4e4e;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+.btn-outline-dark {
+  color: black !important;
+  font-weight: 500;
+}
+
+.form_ {
+  width: 80%;
+}
+
+
+
+
+
+
+
+
+select,
+option,
+input,
+label,
+textarea,
+button {
+  padding: 0.2rem 1rem;
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.form-box {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box label {
+  display: none;
+}
+
 .form-box input,
 .form-box select,
-.form-box textarea{
-    flex-basis: 100%;
+.form-box textarea {
+  flex-basis: 100%;
 }
-.form-box button{
-    
-}
+
+.form-box button {}
 
 /*******************************
         Media Queries
 *******************************/
-@media all and (min-width: 500px){
-    .form-box{
-        
-    }
-    .form-box label{
-        display: block;
-    }
-    .form-box input,
-    .form-box select,
-    .form-box textarea{
-        
-    }
-    .form-box button{
+@media all and (min-width: 500px) {
+  .form-box {}
 
-    }
+  .form-box label {
+    display: block;
+  }
+
+  .form-box input,
+  .form-box select,
+  .form-box textarea {}
+
+  .form-box button {}
 }
 
-@media all and (min-width: 600px){
-    .form-box{
-        flex-direction: row;
-    }
-    .form-box label{
-        flex-basis: 9rem;
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
-    .form-box input,
-    .form-box select,
-    .form-box textarea{
-        flex-basis: 0;
-        flex-grow: 1;
-        flex-shrink: 1;
-    }
-    .form-box button{
-        margin-left: 9rem;
-    }
+@media all and (min-width: 600px) {
+  .form-box {
+    flex-direction: row;
+  }
+
+  .form-box label {
+    flex-basis: 9rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .form-box input,
+  .form-box select,
+  .form-box textarea {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .form-box button {
+    margin-left: 9rem;
+  }
 }
