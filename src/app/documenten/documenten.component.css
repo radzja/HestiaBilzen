@@ -1,0 +1,93 @@
+.wrapper_documenten {
+  margin: auto auto;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 99%;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content: center;
+
+}
+
+.center {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+}
+
+h3 {
+  font-size: 16px;
+  color: #787878;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+}
+
+p {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  
+}
+
+.flex-container > div {
+  background-color: #f5f5f5;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  justify-content: center;
+}
+
+
+
+
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 100%;
+  flex: 1
+}
+
+.sportongeval-column {
+  text-align: center;
+  height: 300px;
+}
+
+.geschikheids-column {
+  text-align: center;
+  height: 300px;
+}
+
+.wedstrijdblad-column {
+  text-align: center;
+  height: 300px;
+}
