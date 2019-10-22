@@ -1,0 +1,36 @@
+.kalender-page-wrapper {
+  margin: 15px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+}
+
+.lead {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #4e4e4e;
+  }
+  
+  p {
+    display: block;
+  }
+
+  a {
+    color:#007bff;
+  }
+
+.title {
+    text-align: center;
+}
+
+.row {
+     width: 100%;
+  }
+
