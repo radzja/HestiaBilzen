@@ -15,6 +15,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { KalenderComponent } from './kalender/kalender.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { HeaderComponent } from './header/header.component';
+import { PloegComponent } from './ploeg/ploeg.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { HeaderComponent } from './header/header.component';
     ContactFormComponent,
     CalenderComponent,  
     PageNotFoundComponent,  
-    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent
+    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent
   ],
   imports: [
     BrowserModule,

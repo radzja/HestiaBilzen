@@ -44,7 +44,11 @@ h4 {
 
 p {
   display: block;
-  line-height: 20px;
+  margin-bottom: 0rem;
+}
+
+a {
+  color: #4e4e4e;
 }
 
 .panel {
@@ -63,6 +67,12 @@ img {
   border: 0;
 }
 
+.gmaps {
+  height: 80px;
+  width: 80px;
+  margin-left: 18px;
+}
+
 .panel-title {
   margin-top: 0;
   padding: 10px;
@@ -78,8 +88,8 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   background-color: #f1f1f1; 
- 
-}
+  }
+
 .flex-container > div {
   margin: 10px;
   text-align: left;
