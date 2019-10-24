@@ -1,0 +1,33 @@
+h2 {
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+  margin: 10px;
+
+}
+
+.training {
+  margin-top: 20px;
+}
+
+.r_info {
+  margin-right: 5px;
+}
+
+.l_info {
+  margin-left: 5px;
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
