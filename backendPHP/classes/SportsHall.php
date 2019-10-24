@@ -2,19 +2,21 @@
 class SportsHall {
 
   public $sportshallId;
-  public $clubId;
   public $name;
   public $street;
   public $city;
+  public $phoneNumber;
   public $mapsURL;
+  public $club;
 
-  public function __construct($sportshallId,$clubId,$name = '',$street = '',$city = '',$phoneNumber = '',$mapsURL = '') {
+  public function __construct($sportshallId,$name = '',$street = '',$city = '',$phoneNumber = '',$mapsURL = '',$club = '') {
     $this->sportshallId = (int) $sportshallId;
-    $this->clubId = (int) $clubId;
     $this->name = $name;
     $this->street = $homeTeam;
     $this->city = $city;
+    $this->phoneNumber = $phoneNumber;
     $this->mapsURL = $mapsURL;
+    $this->club = $club;
   }
 
 }
