@@ -11,6 +11,15 @@
   margin-top: 20px;
 }
 
+.lead {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+  margin: 10px;
+}
+
 .gmap-area {
   background-image: url(src\assets\images\map.jpg);
   background-position: 0 0;

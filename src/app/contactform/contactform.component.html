@@ -25,51 +25,50 @@
     <p class="lead">Heb je een vraag, opmerking of probleem? Contacteer ons op onderstaand formulier.</p>
   </div>
 
-  <!-- begin formulier -->  
+  <!-- begin formulier -->
 
   <div class="row">
     <div class="col">
       <hr>
     </div>
-  </div>  
+  </div>
 
+  <div class="d-flex justify-content-center">
+    <div class="form_">
+      <form action="" method="post" enctype="text/plain" style="width:100%;" #myForm="ngForm">
+        <div class="col">
 
-
-  <div class ="d-flex justify-content-center">
-  <div class="form_">
-    <form action="" method="post" enctype="text/plain" style="width:100%;" #myForm="ngForm" >
-      <div class="col">
-
-        <!-- persoonlijke info -->
-        <div class="row" ngModelGroup="verzender_info">
-          <div class="col">
-            <div class="form-group">
-              <label for="fnText">Voornaam </label>
-              <input type="text" ngModel name="firstName" #firstName="ngModel" [ngClass]="{'form-control': true, 
+          <!-- persoonlijke info -->
+          <div class="row" ngModelGroup="verzender_info">
+            <div class="col">
+              <div class="form-group">
+                <label for="fnText">Voornaam </label>
+                <input type="text" ngModel name="firstName" #firstName="ngModel" [ngClass]="{'form-control': true, 
             'is-invalid': !firstName?.valid && firstName?.touched,
             'is-valid': firstName?.valid && firstName?.touched}" required minlength="2" id="fnText" placeholder="...">
-              <small id="fnHelp" *ngIf="firstName?.errors?.required && firstName?.touched"
-                class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
-              <small id="fnHelp" *ngIf="firstName?.errors?.minlength && firstName?.touched"
-                class="form-text custom-invalid-feedback">Tenminste 2 letters ingeven.</small>
+                <small id="fnHelp" *ngIf="firstName?.errors?.required && firstName?.touched"
+                  class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
+                <small id="fnHelp" *ngIf="firstName?.errors?.minlength && firstName?.touched"
+                  class="form-text custom-invalid-feedback">Tenminste 2 letters ingeven.</small>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="lnText">Naam</label>
-              <input type="text" ngModel name="lastName" required #lastName="ngModel" [ngClass]="{'form-control': true, 
+            <div class="col">
+              <div class="form-group">
+                <label for="lnText">Naam</label>
+                <input type="text" ngModel name="lastName" required #lastName="ngModel" [ngClass]="{'form-control': true, 
             'is-invalid': !lastName?.valid && lastName?.touched,
             'is-valid': lastName?.valid && lastName?.touched}" id="lnText" placeholder="...">
-              <small id="fnHelp" *ngIf="lastName?.errors?.required && firstName?.touched"
-                class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
+                <small id="fnHelp" *ngIf="lastName?.errors?.required && firstName?.touched"
+                  class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
+          <div class="row">
             <div class="col-6">
               <div class="form-group">
                 <label for="emText">Email</label>
-                <input type="email" ngModel name="emailAdres" required #emailAdres="ngModel" [pattern]="emailPattern" [ngClass]="{'form-control': true, 
+                <input type="email" ngModel name="emailAdres" required #emailAdres="ngModel" [pattern]="emailPattern"
+                  [ngClass]="{'form-control': true, 
               'is-invalid': !emailAdres?.valid && emailAdres?.touched,
               'is-valid': emailAdres?.valid && emailAdres?.touched}" id="emText" placeholder="default@example.gmail">
                 <small id="fnHelp" *ngIf="emailAdres?.errors?.required && emailAdres?.touched"
@@ -78,56 +77,53 @@
                   class="form-text custom-invalid-feedback">Geef een geldig email adres in</small>
               </div>
             </div>
-        </div>
-        <!-- bericht info -->
-        <div class="row" ngModelGroup="bericht">
+          </div>
+          <!-- bericht info -->
+          <div class="row" ngModelGroup="bericht">
 
-          <div class="col-3">
-            <div class="form-group">
-              <label for="subject">Onderwerp</label>
-              <select id="inputSubject" ngModel required name="subject" #state="ngModel" [ngClass]="{'form-control' : true,
+            <div class="col-3">
+              <div class="form-group">
+                <label for="subject">Onderwerp</label>
+                <select id="inputSubject" ngModel required name="subject" #state="ngModel" [ngClass]="{'form-control' : true,
               'is-invalid' : !subject?.valid && subject?.touched,
               'is-valid' : subject?.valid && subject?.touched}" name="state" class="form-control">
-                <option selected value="">Kies...</option>
-                <option *ngFor="let item of subject" [value]="item">{{item}}</option>
-              </select>
-              <small *ngIf="subject?.errors?.required && subject?.touched"
-                class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
+                  <option selected value="">Kies...</option>
+                  <option *ngFor="let item of subject" [value]="item">{{item}}</option>
+                </select>
+                <small *ngIf="subject?.errors?.required && subject?.touched"
+                  class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
+              </div>
             </div>
-          </div>
 
-
-          <div class="col-12">
-            <div class="form-group">
-              <label for="addText">Bericht</label>
-              <textarea type="text" class="form-control" ngModel required rows="10" cols="30" #bericht="ngModel"
-                [ngClass]="{'form-control' : true,
+            <div class="col-12">
+              <div class="form-group">
+                <label for="addText">Bericht</label>
+                <textarea type="text" class="form-control" ngModel required rows="10" cols="30" #bericht="ngModel"
+                  [ngClass]="{'form-control' : true,
             'is-invalid' : !bericht?.valid && bericht?.touched,
             'is-valid' : bericht?.valid && bericht?.touched}" name="bericht" id="addText" placeholder="...">
             <small  *ngIf="bericht?.errors?.required && bericht?.touched"
             class="form-text custom-invalid-feedback">Dit veld is verplicht</small>
             </textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <hr>
+          </div>
+          <div class="row justify-content-left">
+            <div class="col-2">
+              <button type="button" [disabled]="!myForm.form.valid" (click)="submitHandler(myForm)"
+                class="btn btn-outline-dark">Verzenden</button>
+
             </div>
           </div>
-
         </div>
+      </form>
+    </div>
 
-        <div class="row">
-          <hr>
-        </div>
-        <div class="row justify-content-left">
-          <div class="col-2">                    
-              <button type="button" [disabled]="!myForm.form.valid" (click)="submitHandler(myForm)" class="btn btn-outline-dark">Verzenden</button>
-           
-
-
-
-          </div>
-        </div>
-      </div>
-    </form>
   </div>
-
-</div>
 
 </div>

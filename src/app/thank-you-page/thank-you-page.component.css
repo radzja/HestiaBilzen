@@ -1,0 +1,37 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.flex-container > div {
+    text-align: center;    
+  }
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    color: #4e4e4e;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-transform:uppercase;
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 15%;
+    margin:auto;
+}
+
+.lead {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #4e4e4e;
+    margin: 10px;
+  }

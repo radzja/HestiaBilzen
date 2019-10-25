@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactSettings } from '../data/contactsettings';
 import { NgForm, NgModel } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contactform',
@@ -10,21 +11,26 @@ import { Observable } from 'rxjs';
 })
   
   export class ContactFormComponent implements OnInit {
- 
-    subject: Array<String> = ['Inschrijving', 'Opmerking', 'Andere'];
-    user = { 'fname': 'Frank', 'lname' : 'Martens'};
     
+    firstName: string;
+    lastName: string;
+    emailAdres: string;
+    subject: Array<String> = ['Inschrijving', 'Opmerking', 'Andere'];
+    bericht:string;
+    
+        
     emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
-    constructor() { }
+    constructor(
+      private router:Router
+    ) { }
 
 
     ngOnInit(){
     }
 
     submitHandler(myForm: any) {
-      // console.log(myForm);
-      console.log('Model Value', this.user);
+      this.router.navigate(['/thank-you-page'])
       console.log('Form Value', myForm.value);
     }  
   }

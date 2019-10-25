@@ -17,6 +17,7 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 import { HeaderComponent } from './header/header.component';
 import { PloegComponent } from './ploeg/ploeg.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContactFormComponent,
     CalenderComponent,  
     PageNotFoundComponent,  
-    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent
+    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent, ThankYouPageComponent
   ],
   imports: [
     BrowserModule,
