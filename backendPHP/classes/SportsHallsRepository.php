@@ -36,8 +36,8 @@ class SportsHallsRepository {
     }
   }
 
-  public static function addSportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL) {
-    return DBHelper::addSportsHall(new SportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL));
+  public static function addSportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL,$club) {
+    return DBHelper::addSportsHall(new SportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL,$club));
   }
 }
 
