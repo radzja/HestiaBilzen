@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contactform/contactform.component';
@@ -16,6 +16,7 @@ import { KalenderComponent } from './kalender/kalender.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { HeaderComponent } from './header/header.component';
 import { PloegComponent } from './ploeg/ploeg.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { PloegComponent } from './ploeg/ploeg.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
