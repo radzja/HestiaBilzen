@@ -2,17 +2,17 @@
 class Match {
 
   public $code;
-  public $date;
-  public $time;
+  public $matchDate;
+  public $matchTime;
   public $homeTeam;
   public $awayTeam;
   public $out;
   public $sportsHallId;
 
-  public function __construct($code = '',$date = '',$time = '',$homeTeam = '',$awayTeam = '',$out = '',$sportsHallId = '') {
+  public function __construct($code = '',$matchDate = '',$matchTime = '',$homeTeam = '',$awayTeam = '',$out = '',$sportsHallId = '') {
     $this->code = $code;
-    $this->date = date('d-m-Y', strtotime($date));
-    $this->time = date('H:i', strtotime($time));
+    $this->matchDate = $matchDate;
+    $this->matchTime = $matchTime;
     $this->homeTeam = $homeTeam;
     $this->awayTeam = $awayTeam;
     $this->out = $out;
