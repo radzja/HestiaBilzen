@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  hideLogo  : boolean = true;
+  showGmaps : boolean = false;
   constructor() { }
 
   ngOnInit() {
+  }  
+  
+toggleGmaps (): void {
+  this.hideLogo = !this.hideLogo;
+  this.showGmaps = !this.showGmaps;
   }
-
 }
