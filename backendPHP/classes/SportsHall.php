@@ -9,7 +9,7 @@ class SportsHall {
   public $mapsURL;
   public $club;
 
-  public function __construct($sportshallId,$name = '',$street = '',$city = '',$phoneNumber = '',$mapsURL = '',$club = '') {
+  public function __construct($sportshallId='',$name = '',$street = '',$city = '',$phoneNumber = '',$mapsURL = '',$club = '') {
     $this->sportshallId = (int) $sportshallId;
     $this->name = $name;
     $this->street = $homeTeam;

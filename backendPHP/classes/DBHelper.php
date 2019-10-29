@@ -64,11 +64,17 @@ class DBHelper {
     return $matches;
   }
 
+  public static function getSportsHallById($sportshallId) {
+    $db_sportshall = DBClass::query('SELECT * FROM sportshalls WHERE sportshallId=?', array($sportshallId));
+    $sportshall = SportsHall($db_sportshall->sportshallId,$db_sportshall->name,$db_sportshall->street,$db_sportshall->city,$db_sportshall->phoneNumber,$db_sportshall->mapsURL,$db_sportshall->club);
+    return $sportshall;
+  }
+
   public static function getPlayers() {
     $players = array();
     $db_players = DBClass::query('SELECT * FROM players');
     foreach ($db_players as $db_player) {
-      $player = new Player($db_player->playerId,$db_player->birthDate,$db_player->team);
+      $player = new Player($db_player->playerId,$db_player->name,$db_player->birthDate,$db_player->team);
       array_push($players, $player);
     }
     return $players;
@@ -78,7 +84,7 @@ class DBHelper {
     $players = array();
     $db_players = DBClass::query('SELECT * FROM players WHERE team=?', array($team));
     foreach ($db_players as $db_player) {
-      $player = new Player($db_player->playerId,$db_player->birthDate,$db_player->team);
+      $player = new Player($db_player->playerId,$db_player->name,$db_player->birthDate,$db_player->team);
       array_push($players, $player);
     }
     return $players;
@@ -103,15 +109,15 @@ class DBHelper {
 
   public static function addPlayer(Player $player) {
     $result = DBClass::execute(
-      'INSERT INTO players (playerId,birthDate,team) VALUES (?, ?, ?)',
-      array($player->playerId, $player->birthDate, $player->team));
+      'INSERT INTO players (name,birthDate,team) VALUES (?, ?, ?)',
+      array($player->name, $player->birthDate, $player->team));
     return $result;
   }
 
   public static function addSportsHall(SportsHall $sportsHall) {
     $result = DBClass::execute(
-      'INSERT INTO sportshalls (sportshallId,name,street,city,phoneNumber,mapsURL,club) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      array($sportsHall->sportshallId, $sportsHall->name, $sportsHall->street, $sportsHall->city, $sportsHall->phoneNumber, $sportsHall->mapsURL, $sportsHall->club));
+      'INSERT INTO sportshalls (name,street,city,phoneNumber,mapsURL,club) VALUES (?, ?, ?, ?, ?, ?)',
+      array($sportsHall->name, $sportsHall->street, $sportsHall->city, $sportsHall->phoneNumber, $sportsHall->mapsURL, $sportsHall->club));
     return $result;
   }
 

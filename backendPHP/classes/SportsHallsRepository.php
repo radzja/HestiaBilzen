@@ -23,20 +23,13 @@ class SportsHallsRepository {
     return DBHelper::getSportsHalls();
   }
 
-  public static function getSportsHall($id) {
-    $sportsHalls = DBHelper::getSportsHalls();
-    $sportsHall = array_filter($sportsHalls, function($val) use ($id) {
-      return $val->sportshallId === $id;
-    });
-    if(count($sportsHall) === 1) {
-      $sportsHall = array_shift($sportsHall);
-      //$match->homeTeam = DBHelper::getStates($match);
-      return $sportsHall;
-    }
+  public static function getSportsHallById($sportshallId) {
+    $sportsHall = DBHelper::getSportsHallById($sportshallId);
+    return $sportsHall;
   }
 
-  public static function addSportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL,$club) {
-    return DBHelper::addSportsHall(new SportsHall($sportshallId,$name,$street,$city,$phoneNumber,$mapsURL,$club));
+  public static function addSportsHall($name,$street,$city,$phoneNumber,$mapsURL,$club) {
+    return DBHelper::addSportsHall(new SportsHall($name,$street,$city,$phoneNumber,$mapsURL,$club));
   }
 }
 
