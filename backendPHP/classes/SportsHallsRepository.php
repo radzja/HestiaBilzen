@@ -1,6 +1,5 @@
 <?php
 require_once 'DBHelper.php';
-require_once 'Match.php';
 require_once 'SportsHall.php';
 
 class SportsHallsRepository {

@@ -1,7 +1,6 @@
 <?php
 require_once 'DBHelper.php';
 require_once 'Match.php';
-require_once 'SportsHall.php';
 
 class MatchRepository {
 
@@ -12,12 +11,6 @@ class MatchRepository {
     DBHelper::addMatch(new Match('10062','26-10-19','17:00','U19-M','MARGRATEN',0,1)); // 1 = Sporthal de Kimpel,Eikenlaan 25,3740 Bilzen
     DBHelper::addMatch(new Match('QO79','02-11-19','17:00','U12','Hannibal Tessenderlo',0,1)); // 1 = Sporthal de Kimpel,Eikenlaan 25,3740 Bilzen
     DBHelper::addMatch(new Match('10063','02-11-19','15:15','VIOS','U19-M',1,1)); // Weet locatie niet, vermoed in bilzen: 1 = Sporthal de Kimpel,Eikenlaan 25,3740 Bilzen
-
-    /*
-    DBHelper::addCountry(
-      new Country('Belgium', 'be',
-        array(new State('Limburg'), new State('Vlaams-Brabant'))));
-    */
   }
 
   public static function getMatches() {
@@ -34,6 +27,14 @@ class MatchRepository {
       //$match->homeTeam = DBHelper::getStates($match);
       return $match;
     }
+  }
+
+  public static function getMatchesByTeam($team) {
+    return DBHelper::getMatchesByTeam($team);
+  }
+
+  public static function getUpcomingMatches() {
+    return DBHelper::getUpcomingMatches();
   }
 
   public static function addMatch($code, $matchDate, $matchTime, $homeTeam, $awayTeam, $out, $sportsHallId) {
