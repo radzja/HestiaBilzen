@@ -1,4 +1,4 @@
-export interface IWedstrijden{
+export interface IWedstrijden {
     code: string;
     matchDate: string;
     matchTime: string;
