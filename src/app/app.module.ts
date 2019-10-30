@@ -4,6 +4,10 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contactform/contactform.component';
+<<<<<<< HEAD
+=======
+
+>>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -24,7 +28,12 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     ContactFormComponent, 
+=======
+    ContactFormComponent,
+    
+>>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
     PageNotFoundComponent,  
     HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent, ThankYouPageComponent,
   ],

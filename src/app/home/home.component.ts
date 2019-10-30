@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   hideLogo  : boolean = true;
   showGmaps : boolean = false;
+<<<<<<< HEAD
 
   wedstrijden: IWedstrijden[] = [
     {"code":"QM104","matchDate":"26-10-19","matchTime":"14:30","homeTeam":"HC MAASMECHELEN","awayTeam":"U13-M","out":1,"sportsHallId":17},
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
 
 
 
+=======
+>>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
   constructor() { }
 
   ngOnInit() {

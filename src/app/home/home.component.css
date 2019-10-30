@@ -23,10 +23,13 @@ tr:hover {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 table {
   text-transform: capitalize;
 }
 
+=======
+>>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
 td {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
