@@ -12,6 +12,7 @@ export class HomeComponent {
   showGmaps = false;
 
   private _webstrijden: IWedstrijden[];
+  private sporthalService: SporthalService;
   // private _currentCountry: IWedstrijden;
 
   constructor(private kalenderService: KalenderService) {
@@ -20,7 +21,7 @@ export class HomeComponent {
             this._webstrijden = webstrijden);
   }
 
-  toggleGmaps(): void {
+  toggleGmaps(sporthalId: string): void {
     this.hideLogo = !this.hideLogo;
     this.showGmaps = !this.showGmaps;
     }
