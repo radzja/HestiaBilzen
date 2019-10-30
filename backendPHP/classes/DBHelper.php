@@ -52,12 +52,12 @@ class DBHelper {
 
   public static function getUpcomingMatches() {
     $matches = array();
-    $currentDate = date(d-m-y);
+    $currentDate = date("Y-m-d");
     $db_matches = DBClass::query('SELECT * FROM matches WHERE matchDate>=?', array($currentDate));
     foreach ($db_matches as $db_match) {
       // Return a maximum of 7 upcoming matches
-      if(count($matches)<7) {
-        $match = Match($db_match->code,$db_match->matchDate,$db_match->matchTime,$db_match->homeTeam,$db_match->awayTeam,$db_match->out,$db_match->sportshallId);
+      if(count($matches)<10) {
+        $match = new Match($db_match->code,$db_match->matchDate,$db_match->matchTime,$db_match->homeTeam,$db_match->awayTeam,$db_match->out,$db_match->sportshallId);
         array_push($matches, $match);
       }
     }

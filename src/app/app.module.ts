@@ -4,10 +4,6 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contactform/contactform.component';
-<<<<<<< HEAD
-=======
-
->>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -22,20 +18,26 @@ import { PloegComponent } from './ploeg/ploeg.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { KalenderService } from './kalender/kalender.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    ContactFormComponent, 
-=======
     ContactFormComponent,
-    
->>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
-    PageNotFoundComponent,  
-    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent, ThankYouPageComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent,
+    SporthallenComponent,
+    DocumentenComponent,
+    TeamsComponent,
+    KalenderComponent,
+    SponsorsComponent,
+    HeaderComponent,
+    PloegComponent,
+    ThankYouPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [KalenderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

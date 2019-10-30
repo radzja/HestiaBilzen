@@ -9,36 +9,14 @@
         <div class="table-responsive">
           <table class="table table-sm table-borderless">
             <tbody>
-<<<<<<< HEAD
-                             
-              <tr *ngFor = 'let wedstrijd of wedstrijden' (click)='toggleGmaps()'>
-                <td *ngIf="wedstrijd.out">{{ wedstrijd.awayTeam | uppercase }}</td>
-                <td *ngIf="!wedstrijd.out">{{ wedstrijd.homeTeam | uppercase }}</td>
+              <tr *ngFor = 'let wedstrijd of _webstrijden' (click)='toggleGmaps()'>
+                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</td>
+                <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
                 <td>{{ wedstrijd.matchDate}}</td>
                 <td>om {{ wedstrijd.matchTime }}</td>
-                <td *ngIf="wedstrijd.out">{{ wedstrijd.homeTeam | lowercase }} - Hestia Bilzen</td>
-                <td *ngIf="!wedstrijd.out">Hestia Bilzen - {{ wedstrijd.awayTeam | lowercase }}</td>
-=======
-              <tr (click)='toggleGmaps()'>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
+                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
+                <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
               </tr>
-              <tr>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
-              </tr>
-              <tr>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
->>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
-              </tr>
-              
             </tbody>
           </table>
         </div>
@@ -49,7 +27,7 @@
         <div *ngIf='hideLogo'>
 
          <img src="./assets/images/Hestia_Bilzen.png" class="img-responsive">
-        
+
         </div>
 
         <div *ngIf='showGmaps'>

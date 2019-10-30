@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { IWedstrijden } from '../wedstrijden';
+import { KalenderService } from '../kalender/kalender.service';
 
 @Component({
-
+  // selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  hideLogo = true;
+  showGmaps = false;
 
-  hideLogo  : boolean = true;
-  showGmaps : boolean = false;
-  constructor() { }
+  private _webstrijden: IWedstrijden[];
+  // private _currentCountry: IWedstrijden;
 
-  ngOnInit() {
+  constructor(private kalenderService: KalenderService) {
+    this.kalenderService.getKomendeWebstrijden()
+        .subscribe((webstrijden: IWedstrijden[]) =>
+            this._webstrijden = webstrijden);
   }
 
-toggleGmaps (): void {
-  this.hideLogo = !this.hideLogo;
-  this.showGmaps = !this.showGmaps;
-  }
+  toggleGmaps(): void {
+    this.hideLogo = !this.hideLogo;
+    this.showGmaps = !this.showGmaps;
+    }
 }
