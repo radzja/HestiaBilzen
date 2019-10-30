@@ -20,7 +20,6 @@
       </thead>
       <tbody>
         <tr *ngFor = 'let wedstrijd of wedstrijden'>
-<<<<<<< HEAD
           <td *ngIf="wedstrijd.out">{{ wedstrijd.awayTeam }}</td>
           <td *ngIf="!wedstrijd.out">{{ wedstrijd.homeTeam }}</td>
           <td>{{ wedstrijd.matchDate}}</td>
@@ -28,16 +27,9 @@
           <td>{{ wedstrijd.code}}</td>
           <td *ngIf="wedstrijd.out">{{ wedstrijd.homeTeam }} - Hestia Bilzen</td>
           <td *ngIf="!wedstrijd.out">Hestia Bilzen - {{ wedstrijd.awayTeam }}</td>
-=======
-          <td>{{ wedstrijd.homeTeam}}</td>
-          <td>{{ wedstrijd.matchDate}}</td>
-          <td>om {{ wedstrijd.matchTime}}</td>
-          <td>{{ wedstrijd.code}}</td>
-          <td>{{ wedstrijd.homeTeam}} - {{ wedstrijd.homeTeam}}</td>
->>>>>>> aed3abef6e6356c23f9b53fd42d31c6a303046ab
         </tr>
-    
-     
+
+
       </tbody>
     </table>
   </div>
