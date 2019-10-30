@@ -9,31 +9,47 @@
         <div class="table-responsive">
           <table class="table table-sm table-borderless">
             <tbody>
-              <tr>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
+                             
+              <tr *ngFor = 'let wedstrijd of wedstrijden' (click)='toggleGmaps()'>
+                <td *ngIf="wedstrijd.out">{{ wedstrijd.awayTeam | uppercase }}</td>
+                <td *ngIf="!wedstrijd.out">{{ wedstrijd.homeTeam | uppercase }}</td>
+                <td>{{ wedstrijd.matchDate}}</td>
+                <td>om {{ wedstrijd.matchTime }}</td>
+                <td *ngIf="wedstrijd.out">{{ wedstrijd.homeTeam | lowercase }} - Hestia Bilzen</td>
+                <td *ngIf="!wedstrijd.out">Hestia Bilzen - {{ wedstrijd.awayTeam | lowercase }}</td>
               </tr>
-              <tr>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
-              </tr>
-              <tr>
-                <td>U13 M</td>
-                <td>16-10-19</td>
-                <td>om 14u30</td>
-                <td>Hestia Bilzen - Kiewit</td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
         <!--Table-->
       </aside>
       <aside class="aside aside-2">
-        <h1>Hier gegevens wedstrijd na klik !</h1>
+
+        <div *ngIf='hideLogo'>
+
+         <img src="./assets/images/Hestia_Bilzen.png" class="img-responsive">
+        
+        </div>
+
+        <div *ngIf='showGmaps'>
+          <h1>Wedstrijd gaat door in :</h1>
+          <div class="flex-container">
+            <div>
+              <!--interpolation het adres en width ... propertybinding-->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40267.410943159724!2d5.4639637!3d50.8920186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0dfd3e79f2715%3A0xb02a8d2617dcbefe!2sDe%20Zonhoeve!5e0!3m2!1sen!2sbe!4v1571824554791!5m2!1sen!2sbe"
+                width="200" height="" frameborder="1" style="border:1px solid #1f1f20;border-radius: 5px;"
+                allowfullscreen="">
+              </iframe>
+            </div>
+            <div>
+              <h2>Sporthal de Kimpel</h2>
+              <p>Eikenlaan 25<br>3740 Bilzen</p>
+              <p><i class="fa fa-phone"></i> 089 / 51.95.30</p>
+            </div>
+          </div>
+        </div>
       </aside>
     </div>
 

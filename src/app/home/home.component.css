@@ -4,6 +4,12 @@ h1 {
   text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
 }
 
+h2 {
+  font-size: 25px;
+  color: #0069b2;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
+}
+
 h5 {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
@@ -12,12 +18,27 @@ h5 {
   font-size: 14px;
 }
 
+tr:hover {
+  background-color:#0069b2;
+  cursor: pointer;
+}
+
+table {
+  text-transform: capitalize;
+}
+
 td {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   color: white;
   text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .back_img {
@@ -31,6 +52,20 @@ td {
   max-width: 100%;
   display: block !important;
   height: 730px;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  margin: 10px;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
+  font-size: 16px;
 }
 
 .event {

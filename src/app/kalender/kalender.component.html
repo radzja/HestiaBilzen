@@ -1,12 +1,13 @@
 <div class='kalender-page-wrapper'>
   <div class="row d-flex justify-content-center">
     <div class="title">
-      <h2>Competitie kalender 2019 - 2020</h2>
+      <h2>{{pageTitle}}</h2>
       <p class="lead">Programma kan u nachecken op <a href="http://limburg.handbal.be/competitie.html">&gt;&gt; Handbal
           Limburg &lt;&lt;</a> </p>
     </div>
   </div>
-  <div class="table-responsive ">
+  <div class='table-responsive'
+              *ngIf = 'wedstrijden && wedstrijden.length'>
     <table class="table table-hover">
       <thead>
         <tr class="table-primary">
@@ -18,37 +19,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>U14 M</th>
-          <td>22-10-2019</td>
-          <td>om 14u30</td>
-          <td>QM104</td>
-          <td>Hestia Bilzen - Hasselt</td>
+        <tr *ngFor = 'let wedstrijd of wedstrijden'>
+          <td *ngIf="wedstrijd.out">{{ wedstrijd.awayTeam }}</td>
+          <td *ngIf="!wedstrijd.out">{{ wedstrijd.homeTeam }}</td>
+          <td>{{ wedstrijd.matchDate}}</td>
+          <td>om {{ wedstrijd.matchTime}}</td>
+          <td>{{ wedstrijd.code}}</td>
+          <td *ngIf="wedstrijd.out">{{ wedstrijd.homeTeam }} - Hestia Bilzen</td>
+          <td *ngIf="!wedstrijd.out">Hestia Bilzen - {{ wedstrijd.awayTeam }}</td>
         </tr>
-
-        <tr>
-          <th>U14 M</th>
-          <td>22-10-2019</td>
-          <td>om 14u30</td>
-          <td>QM104</td>
-          <td>Hestia Bilzen - Hasselt</td>
-        </tr>
-
-        <tr>
-          <th>U14 M</th>
-          <td>22-10-2019</td>
-          <td>om 14u30</td>
-          <td>QM104</td>
-          <td>Hestia Bilzen - Hasselt</td>
-        </tr>
-
-        <tr>
-          <th>U14 M</th>
-          <td>22-10-2019</td>
-          <td>om 14u30</td>
-          <td>QM104</td>
-          <td>Hestia Bilzen - Hasselt</td>
-        </tr>
+    
+     
       </tbody>
     </table>
   </div>

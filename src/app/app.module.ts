@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contactform/contactform.component';
-import { CalenderComponent } from './calender/calender.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,14 +18,15 @@ import { PloegComponent } from './ploeg/ploeg.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
+import { CommonModule } from '@angular/common';  
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactFormComponent,
-    CalenderComponent,  
+    ContactFormComponent, 
     PageNotFoundComponent,  
-    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent, ThankYouPageComponent
+    HomeComponent, NavbarComponent, FooterComponent, SporthallenComponent, DocumentenComponent, TeamsComponent, KalenderComponent, SponsorsComponent, HeaderComponent, PloegComponent, ThankYouPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,7 @@ import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
