@@ -9,13 +9,13 @@
         <div class="table-responsive">
           <table class="table table-sm table-borderless">
             <tbody>
-              <tr *ngFor = 'let wedstrijd of _webstrijden' (click)='toggleGmaps()'>
-                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</td>
-                <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
-                <td>{{ wedstrijd.matchDate}}</td>
-                <td>om {{ wedstrijd.matchTime }}</td>
-                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
-                <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
+              <tr *ngFor = 'let wedstrijd of _wedstrijden'>
+                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.awayTeam | uppercase }}</td>
+                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.homeTeam | uppercase }}</td>
+                <td (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.matchDate}}</td>
+                <td (click)='toggleGmaps(wedstrijd)'>om {{ wedstrijd.matchTime }}</td>
+                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
+                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
               </tr>
             </tbody>
           </table>
@@ -34,22 +34,18 @@
           <h1>Wedstrijd gaat door in :</h1>
           <div class="flex-container">
             <div>
-              <!--interpolation het adres en width ... propertybinding-->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40267.410943159724!2d5.4639637!3d50.8920186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0dfd3e79f2715%3A0xb02a8d2617dcbefe!2sDe%20Zonhoeve!5e0!3m2!1sen!2sbe!4v1571824554791!5m2!1sen!2sbe"
-                width="200" height="" frameborder="1" style="border:1px solid #1f1f20;border-radius: 5px;"
-                allowfullscreen="">
+              <iframe [src]="this.mapsURL" width="200px" frameborder="1"
+              style="border:1px solid #1f1f20;border-radius: 5px;" allowfullscreen="">
               </iframe>
             </div>
             <div>
-              <h2>Sporthal de Kimpel</h2>
-              <p>Eikenlaan 25<br>3740 Bilzen</p>
-              <p><i class="fa fa-phone"></i> 089 / 51.95.30</p>
+              <h2>{{ wedstrijdSporthal.name }}</h2>
+              <p>{{ wedstrijdSporthal.street }}<br>{{ wedstrijdSporthal.city }}</p>
+              <p><i class="fa fa-phone"></i>{{ wedstrijdSporthal.phoneNumber }}</p>
             </div>
           </div>
         </div>
       </aside>
     </div>
-
   </div>
 </div>

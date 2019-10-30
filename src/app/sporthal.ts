@@ -1,5 +1,5 @@
 export interface ISporthal {
-    sporthallId: number;
+    sporthalId: number;
     name: string;
     street: string;
     city: string;

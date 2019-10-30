@@ -27,8 +27,8 @@ class PlayersRepository {
     return DBHelper::getPlayersByTeam($team);
   }
 
-  public static function addPlayer($playerId, $birthDate, $team) {
-    return DBHelper::addPlayer(new Player($playerId, $birthDate, $team));
+  public static function addPlayer($stamNr,$name,$birthDate,$team) {
+    return DBHelper::addPlayer(new Player($stamNr,$name,$birthDate, $team));
   }
 }
 

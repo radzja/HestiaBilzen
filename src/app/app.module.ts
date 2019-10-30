@@ -20,6 +20,8 @@ import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component
 
 import { CommonModule } from '@angular/common';
 import { KalenderService } from './kalender/kalender.service';
+import { SporthalService } from './sporthallen/sporthal.service';
+import { SpelerService } from './ploeg/speler.service';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { KalenderService } from './kalender/kalender.service';
     HttpClientModule,
     CommonModule,
   ],
-  providers: [KalenderService],
+  providers: [KalenderService,
+              SporthalService,
+              SpelerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,8 +20,14 @@ class SportsHallsRepository {
   }
 
   public static function getSportsHallById($sportshallId) {
-    $sportsHall = DBHelper::getSportsHallById($sportshallId);
-    return $sportsHall;
+    $sportsHalls = DBHelper::getSportsHalls();
+    $sportshall = array_filter($sportsHalls, function($val) use ($sportshallId) {
+      return $val->sportshallId === $sportshallId;
+    });
+    if(count($sportshall) === 1) {
+      $sportshall = array_shift($sportshall);
+      return $sportshall;
+    }
   }
 
   public static function addSportsHall($name,$street,$city,$phoneNumber,$mapsURL,$club) {

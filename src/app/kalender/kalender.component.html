@@ -6,8 +6,7 @@
           Limburg &lt;&lt;</a> </p>
     </div>
   </div>
-  <div class='table-responsive'
-              *ngIf = 'wedstrijden && wedstrijden.length'>
+  <div class='table-responsive' *ngIf = '_wedstrijden && _wedstrijden.length'>
     <table class="table table-hover">
       <thead>
         <tr class="table-primary">
@@ -19,17 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor = 'let wedstrijd of wedstrijden'>
-          <td *ngIf="wedstrijd.out">{{ wedstrijd.awayTeam }}</td>
-          <td *ngIf="!wedstrijd.out">{{ wedstrijd.homeTeam }}</td>
-          <td>{{ wedstrijd.matchDate}}</td>
-          <td>om {{ wedstrijd.matchTime}}</td>
-          <td>{{ wedstrijd.code}}</td>
-          <td *ngIf="wedstrijd.out">{{ wedstrijd.homeTeam }} - Hestia Bilzen</td>
-          <td *ngIf="!wedstrijd.out">Hestia Bilzen - {{ wedstrijd.awayTeam }}</td>
-        </tr>
-
-
+        <tr *ngFor = 'let wedstrijd of _wedstrijden'>
+            <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</td>
+            <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
+            <td>{{ wedstrijd.matchDate}}</td>
+            <td>om {{ wedstrijd.matchTime }}</td>
+            <td>{{ wedstrijd.code}}</td>
+            <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
+            <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
+          </tr>
       </tbody>
     </table>
   </div>

@@ -4,37 +4,18 @@ import { Observable } from 'rxjs';
 import { ISporthal } from '../sporthal';
 
 @Injectable()
-export class KalenderService {
+export class SporthalService {
   constructor(private _http: HttpClient) { }
 
-  getWebstrijden(): Observable<IWedstrijden[]> {
-    return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getMatches.php'
+  getSporthallen(): Observable<ISporthal[]> {
+    return this._http.get<ISporthal[]>(
+      'http://localhost:3000/services/getSportsHalls.php'
     );
   }
 
-  getWebstrijdenPerTeam(team: string): Observable<IWedstrijden[]> {
-    return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getMatchesByTeam.php?team=' + encodeURIComponent(team)
+  getSporthal(id: number): Observable<ISporthal> {
+    return this._http.get<ISporthal>(
+      'http://localhost:3000/services/getSportsHall.php?id=' + encodeURIComponent(id)
     );
   }
-
-  getWedstrijd(code: string): Observable<IWedstrijden> {
-    return this._http.get<IWedstrijden>(
-      'http://localhost:3000/services/getMatch.php?code=' + encodeURIComponent(code)
-    );
-  }
-
-  getKomendeWebstrijden(): Observable<IWedstrijden[]> {
-    return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getUpcomingMatches.php'
-    );
-  }
-
-  /* addState(name: string, code: string): Observable<boolean> {
-    return this._http.post<boolean>(
-      'http://localhost:3000/services/addState.php',
-      { name, code }
-    );
-  } */
 }

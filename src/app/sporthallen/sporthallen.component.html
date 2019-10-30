@@ -46,22 +46,23 @@
     </div>
     <div class='column'>
       <div class='column right'>
-        <div class="panel">
+        <div class="panel" *ngFor = 'let sporthal of _sporthallen'>
           <div class="panel-title">
-            <h3>Sporthal de Zonhoeve</h3>
+            <h3>{{ sporthal.name }}</h3>
           </div>
-
           <div class="flex-container">
-            <div>
+            <!-- <div>
               <img class="img-responsive" src="./assets/images/sporthallen/zonhoeve.jpg">
+            </div> -->
+            <div>
+              <h4>{{ sporthal.name }}</h4>
+              <p>{{ sporthal.street }}
+              <br>
+              {{ sporthal.city }}</p>
+              <p><i class="fa fa-phone"></i>{{ sporthal.phoneNumber }}</p>
             </div>
             <div>
-              <h4>Sporthal de Zonhoeve</h4>
-              <p>Zonhoevestraat 3<br>3740 Beverst</p>
-              <p><i class="fa fa-phone"></i> 089 / 41.69.61</p>
-            </div>
-            <div>
-              <a href="https://goo.gl/maps/2LN46Tbjohb8aMEw9" target="_blank">
+              <a [href]="this.transform(sporthal.mapsURL)" target="_blank">
                 <img class="gmaps" src="./assets/images/google_maps_icon.png">
                 <p>Bereken je route</p>
               </a>

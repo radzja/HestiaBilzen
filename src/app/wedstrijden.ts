@@ -5,6 +5,6 @@ export interface IWedstrijden {
     homeTeam: string;
     awayTeam: string;
     out: number;
-    sportsHallId: number;
+    sportshallId: string;
 }
 

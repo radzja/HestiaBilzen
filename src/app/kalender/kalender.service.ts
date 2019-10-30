@@ -7,13 +7,13 @@ import { IWedstrijden } from '../wedstrijden';
 export class KalenderService {
   constructor(private _http: HttpClient) { }
 
-  getWebstrijden(): Observable<IWedstrijden[]> {
+  getWedstrijden(): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
       'http://localhost:3000/services/getMatches.php'
     );
   }
 
-  getWebstrijdenPerTeam(team: string): Observable<IWedstrijden[]> {
+  getWedstrijdenPerTeam(team: string): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
       'http://localhost:3000/services/getMatchesByTeam.php?team=' + encodeURIComponent(team)
     );
@@ -25,7 +25,7 @@ export class KalenderService {
     );
   }
 
-  getKomendeWebstrijden(): Observable<IWedstrijden[]> {
+  getKomendeWedstrijden(): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
       'http://localhost:3000/services/getUpcomingMatches.php'
     );

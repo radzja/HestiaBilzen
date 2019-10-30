@@ -40,16 +40,6 @@ class DBHelper {
       return $matches;
   }
 
-  public static function getMatchesByTeam($team) {
-    $matches = array();
-    $db_matches = DBClass::query('SELECT * FROM matches WHERE homeTeam=? OR awayTeam=?', array($team,$team));
-    foreach ($db_matches as $db_match) {
-      $match = Match($db_match->code,$db_match->matchDate,$db_match->matchTime,$db_match->homeTeam,$db_match->awayTeam,$db_match->out,$db_match->sportshallId);
-      array_push($matches, $match);
-    }
-    return $matches;
-  }
-
   public static function getUpcomingMatches() {
     $matches = array();
     $currentDate = date("Y-m-d");
@@ -64,17 +54,33 @@ class DBHelper {
     return $matches;
   }
 
-  public static function getSportsHallById($sportshallId) {
-    $db_sportshall = DBClass::query('SELECT * FROM sportshalls WHERE sportshallId=?', array($sportshallId));
-    $sportshall = SportsHall($db_sportshall->sportshallId,$db_sportshall->name,$db_sportshall->street,$db_sportshall->city,$db_sportshall->phoneNumber,$db_sportshall->mapsURL,$db_sportshall->club);
-    return $sportshall;
+  public static function getSportsHalls() {
+    $sportshalls = array();
+    $db_sportshalls = DBClass::query('SELECT * FROM sportshalls');
+    foreach ($db_sportshalls as $db_sportshall) {
+        $sportshall = new SportsHall($db_sportshall->sportshallId,
+                                      $db_sportshall->name,
+                                      $db_sportshall->street,
+                                      $db_sportshall->city,
+                                      $db_sportshall->phoneNumber,
+                                      $db_sportshall->mapsURL,
+                                      $db_sportshall->club);
+        array_push($sportshalls, $sportshall);
+    }
+    return $sportshalls;
   }
+
+  // public static function getSportsHallById($sportshallId) {
+  //   $db_sportshall = DBClass::query('SELECT * FROM sportshalls WHERE sportshallId=?', array($sportshallId));
+  //   $sportshall = SportsHall($db_sportshall->sportshallId,$db_sportshall->name,$db_sportshall->street,$db_sportshall->city,$db_sportshall->phoneNumber,$db_sportshall->mapsURL,$db_sportshall->club);
+  //   return $db_sportshall;
+  // }
 
   public static function getPlayers() {
     $players = array();
     $db_players = DBClass::query('SELECT * FROM players');
     foreach ($db_players as $db_player) {
-      $player = new Player($db_player->playerId,$db_player->name,$db_player->birthDate,$db_player->team);
+      $player = new Player($db_player->playerId,$db_player->stamNr,$db_player->name,$db_player->birthDate,$db_player->team);
       array_push($players, $player);
     }
     return $players;
@@ -84,7 +90,7 @@ class DBHelper {
     $players = array();
     $db_players = DBClass::query('SELECT * FROM players WHERE team=?', array($team));
     foreach ($db_players as $db_player) {
-      $player = new Player($db_player->playerId,$db_player->name,$db_player->birthDate,$db_player->team);
+      $player = new Player($db_player->playerId,$db_player->stamNr,$db_player->name,$db_player->birthDate,$db_player->team);
       array_push($players, $player);
     }
     return $players;
@@ -94,7 +100,7 @@ class DBHelper {
     $players = array();
     $db_players = DBClass::query('SELECT * FROM players WHERE birthDate=?', array($birthDate));
     foreach ($db_players as $db_player) {
-      $player = new Player($db_player->playerId,$db_player->birthDate,$db_player->team);
+      $player = new Player($db_player->playerId,$db_player->stamNr,$db_player->name,$db_player->birthDate,$db_player->team);
       array_push($players, $player);
     }
     return $players;
@@ -103,14 +109,14 @@ class DBHelper {
   public static function addMatch(Match $match) {
     $result = DBClass::execute(
       'INSERT INTO matches (code,matchDate,matchTime,homeTeam,awayTeam,out,sportsHallId) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      array($match->code, $match->matchDate, $match->matchTime, $match->homeTeam, $match->awayTeam, $match->outMatch, $match->sportsHallId));
+      array($match->code, $match->matchDate, $match->matchTime, $match->homeTeam, $match->awayTeam, $match->outMatch, $match->sportshallId));
     return $result;
   }
 
   public static function addPlayer(Player $player) {
     $result = DBClass::execute(
-      'INSERT INTO players (name,birthDate,team) VALUES (?, ?, ?)',
-      array($player->name, $player->birthDate, $player->team));
+      'INSERT INTO players (stamNr,name,birthDate,team) VALUES (?, ?, ?, ?)',
+      array($player->stamNr, $player->name, $player->birthDate, $player->team));
     return $result;
   }
 

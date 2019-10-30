@@ -30,15 +30,23 @@ class MatchRepository {
   }
 
   public static function getMatchesByTeam($team) {
-    return DBHelper::getMatchesByTeam($team);
+    $matches = DBHelper::getMatches();
+    $homeMatches = array_filter($matches, function($val) use ($team) {
+      return $val->homeTeam === $team;
+    });
+    $awayMatches = array_filter($matches, function($val) use ($team) {
+      return $val->awayTeam === $team;
+    });
+    $teamMatches = array_merge($homeMatches,$awayMatches);
+    return $teamMatches;
   }
 
   public static function getUpcomingMatches() {
     return DBHelper::getUpcomingMatches();
   }
 
-  public static function addMatch($code, $matchDate, $matchTime, $homeTeam, $awayTeam, $out, $sportsHallId) {
-    return DBHelper::addMatch(new Match($code, $matchDate, $matchTime, $homeTeam, $awayTeam, $out, $sportsHallId));
+  public static function addMatch($code, $matchDate, $matchTime, $homeTeam, $awayTeam, $out, $sportshallId) {
+    return DBHelper::addMatch(new Match($code, $matchDate, $matchTime, $homeTeam, $awayTeam, $out, $sportshallId));
   }
 }
 
