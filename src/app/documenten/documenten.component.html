@@ -126,8 +126,8 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <input type="file" name="docs" (change)="onFileChange($event)" />
-    <button type="submit">Upload</button>
+    <input type="file" name="file" (change)="onFileChange($event)" />
+    <button type="submit" name="submit">Upload</button>
 
   </form>
 </div>

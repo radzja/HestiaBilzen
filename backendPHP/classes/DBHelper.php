@@ -127,10 +127,10 @@ class DBHelper {
     return $result;
   }
 
-  public static function uploadFile($file,$file_type,$file_size) {
+  public static function uploadFile($file_name,$file_type,$file_size) {
     $result = DBClass::execute(
-      'INSERT INTO file_uploads (file,type,size) VALUES (?, ?, ?)',
-      array($file,$file_type,$file_size));
+      'INSERT INTO file_uploads (file_name,file_type,file_size) VALUES (?, ?, ?)',
+      array($file_name,$file_type,$file_size));
     return $result;
   }
 

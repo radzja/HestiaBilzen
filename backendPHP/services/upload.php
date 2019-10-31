@@ -1,18 +1,20 @@
 <?php
 
+header('Access-Control-Allow-Origin: http://localhost:4200');
+//header('Content-type: application/json');
+
 require_once '../classes/DBHelper.php';
 
-if(isset($_POST['btn-upload']))
-{
-  $file = rand(1000,100000)."-".$_FILES['file']['name'];
+//if(isset($_POST['btn-upload']))
+//if(!empty($_POST["docs"]))
+if(array_key_exists('submit', $_POST)) {
+  $file_name = rand(100,1000)."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
   $folder="../uploads/";
 
-  move_uploaded_file($file_loc,$folder.$file);
-  $sql="INSERT INTO tbl_uploads(file,type,size) VALUES('$file','$file_type','$file_size')";
-  mysql_query($sql);
-  DBHelper::uploadFile($file,$file_type,$file_size);
+  move_uploaded_file($file_loc,$folder.$file_name);
+  DBHelper::uploadFile($file_name,$file_type,$file_size);
 }
 ?>
