@@ -22,11 +22,11 @@
 
 .column .left {
    margin-right: 10px;
- 
+
 }
 
-.column .right {  
-  margin-left: 10px;  
+.column .right {
+  margin-left: 10px;
 }
 
 h3{
@@ -60,7 +60,7 @@ a {
 .img-responsive {
   display: block;
   height: auto;
-  max-width: 100%;  
+  max-width: 100%;
 }
 
 img {
@@ -80,14 +80,15 @@ img {
   font-size: 16px;
   color: inherit;
   color: #ddd;
-  background-color: #1f1f20; 
+  background-color: #1f1f20;
 }
 
 .flex-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #f1f1f1; 
+  justify-content: flex-start;
+  background-color: #f1f1f1;
+	background-color: #f1f1f1;
+	padding-left: 30px;
   }
 
 .flex-container > div {

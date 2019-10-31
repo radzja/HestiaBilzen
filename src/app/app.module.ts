@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { KalenderService } from './kalender/kalender.service';
 import { SporthalService } from './sporthallen/sporthal.service';
 import { SpelerService } from './ploeg/speler.service';
+import { RouteInfoComponent } from './route-info/route-info.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { SpelerService } from './ploeg/speler.service';
     HeaderComponent,
     PloegComponent,
     ThankYouPageComponent,
+    RouteInfoComponent,
   ],
   imports: [
     BrowserModule,

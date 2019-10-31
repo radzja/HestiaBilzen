@@ -12,10 +12,10 @@ export class DocumentenComponent implements OnInit {
   form: FormGroup;
   error: string;
   userId: number = 1; /* gekoppeld aan de userdid in de tabel als die er is,anders aanpassen*/
-  
+
   uploadResponse = { status: '', message: '', filePath: '' };
 
- 
+
 
   constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
 
@@ -24,7 +24,6 @@ export class DocumentenComponent implements OnInit {
       docs: ['']
     });
   }
-
 
   onFileChange(event) {
     if (event.target.files.length > 0) {
@@ -42,5 +41,5 @@ export class DocumentenComponent implements OnInit {
       (err) => this.error = err
     );
   }
-  
+
 }

@@ -21,18 +21,22 @@ export class HomeComponent {
   }
   hideLogo = true;
   showGmaps = false;
+  displayroute = false;
 
   private _wedstrijden: IWedstrijden[];
   private wedstrijdSporthal: ISporthal;
-  private mapsURL;
+  public mapsURL;
 
   OnInit() {
 
   }
 
   toggleGmaps(wedstrijd): void {
-    this.hideLogo = !this.hideLogo;
-    this.showGmaps = !this.showGmaps;
+    if (!this.displayroute) {
+      this.displayroute = !this.displayroute;
+      this.hideLogo = !this.hideLogo;
+      this.showGmaps = !this.showGmaps;
+    }
     this.sporthalService.getSporthal(wedstrijd.sportshallId)
         .subscribe((sporthal: ISporthal) =>
         this.wedstrijdSporthal = sporthal);
