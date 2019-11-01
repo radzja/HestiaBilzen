@@ -1,0 +1,17 @@
+
+h1 {
+    color: #0069b2;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.back_img {
+    background-image: url(src\assets\images\admin.png);
+    background-position: 50%;
+    background-position-x: 50%;
+    background-position-y: center center;
+    background-repeat: no-repeat;    
+    left: 0 !important;
+    display: block !important;
+    height: 730px;
+}
