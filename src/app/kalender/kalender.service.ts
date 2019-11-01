@@ -30,11 +30,4 @@ export class KalenderService {
       'http://localhost:3000/services/getUpcomingMatches.php'
     );
   }
-
-  /* addState(name: string, code: string): Observable<boolean> {
-    return this._http.post<boolean>(
-      'http://localhost:3000/services/addState.php',
-      { name, code }
-    );
-  } */
 }

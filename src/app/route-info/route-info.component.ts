@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
+import { SporthalService } from '../sporthallen/sporthal.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ISporthal } from '../sporthal';
 
 @Component({
   selector: 'app-route-info',
   templateUrl: './route-info.component.html',
-  styleUrls: ['./route-info.component.css']
+  styleUrls: ['../home/home.component.css']
 })
-export class RouteInfoComponent implements OnInit {
+export class RouteInfoComponent implements OnChanges {
 
-  constructor() { }
+  // tslint:disable-next-line: no-input-rename
+  @Input('sporthalid') sporthalid;
+  getsporthalid: number;
+  private wedstrijdSporthal: ISporthal;
+  mapsURL: SafeResourceUrl;
 
-  ngOnInit() {
+  constructor(private sporthalService: SporthalService, private sanitizer: DomSanitizer) {
   }
 
+  ngOnChanges() {
+    this.sporthalService.getSporthal(this.sporthalid)
+        .subscribe((sporthal: ISporthal) =>
+        this.wedstrijdSporthal = sporthal);
+    console.log('Sanitized mapsURL: ' + this.mapsURL);
+  }
+
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }

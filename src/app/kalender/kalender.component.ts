@@ -10,7 +10,6 @@ import { KalenderService } from '../kalender/kalender.service';
 export class KalenderComponent implements OnInit {
   pageTitle = 'Competitie kalender 2019 - 2020';
   private _wedstrijden: IWedstrijden[];
-
   // wedstrijden: IWedstrijden [] = [
   // {code: 'QM104', matchDate: '26-10-19', matchTime: '14:30', homeTeam: 'HC MAASMECHELEN', awayTeam: 'U13-M', out: 1, sportshallId: 17},
   // {code: '10062', matchDate: '26-10-19', matchTime: '17:00', homeTeam: 'U19-M', awayTeam: 'MARGRATEN', out: 0, sportshallId: 1},
@@ -21,7 +20,7 @@ export class KalenderComponent implements OnInit {
   constructor(private kalenderService: KalenderService) {
     this.kalenderService.getWedstrijden()
         .subscribe((wedstrijden: IWedstrijden[]) =>
-            this._wedstrijden = wedstrijden);
+                    this._wedstrijden = wedstrijden);
   }
 
   ngOnInit() {

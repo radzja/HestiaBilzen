@@ -1,51 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { IWedstrijden } from '../wedstrijden';
 import { ISporthal } from '../sporthal';
 import { KalenderService } from '../kalender/kalender.service';
 import { SporthalService } from '../sporthallen/sporthal.service';
-import { ISpeed } from 'selenium-webdriver';
 
 @Component({
-  // selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent {
+  // tslint:disable-next-line: variable-name
+  private _wedstrijden: IWedstrijden[];
+  private wedstrijdSporthal: ISporthal;
+  sporthalid = 0;
+  hideLogo = true;
+  showGmaps = false;
+  displayroute = false;
 
   constructor(private kalenderService: KalenderService, private sporthalService: SporthalService, private sanitizer: DomSanitizer) {
     this.kalenderService.getKomendeWedstrijden()
         .subscribe((wedstrijden: IWedstrijden[]) =>
             this._wedstrijden = wedstrijden);
   }
-  hideLogo = true;
-  showGmaps = false;
-  displayroute = false;
-
-  private _wedstrijden: IWedstrijden[];
-  private wedstrijdSporthal: ISporthal;
-  public mapsURL;
-
-  OnInit() {
-
-  }
 
   toggleGmaps(wedstrijd): void {
-    if (!this.displayroute) {
-      this.displayroute = !this.displayroute;
-      this.hideLogo = !this.hideLogo;
-      this.showGmaps = !this.showGmaps;
-    }
-    this.sporthalService.getSporthal(wedstrijd.sportshallId)
-        .subscribe((sporthal: ISporthal) =>
-        this.wedstrijdSporthal = sporthal);
-    console.log('mapsURL: ' + this.wedstrijdSporthal.mapsURL);
-    this.mapsURL = this.transform(this.wedstrijdSporthal.mapsURL);
-    console.log('Sanitized mapsURL: ' + this.mapsURL);
-    }
-
-  transform(url) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.hideLogo = false;
+    this.showGmaps = true;
+    this.displayroute = true;
+    console.log('\nOriginal this.sporthalid: ' + this.sporthalid);
+    this.sporthalid = wedstrijd.sportshallId;
+    console.log('Selected wedstrijd.sportshallId: ' + wedstrijd.sportshallId + '\nNew this.sporthalid: ' + this.sporthalid);
   }
 }

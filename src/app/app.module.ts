@@ -18,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
 import { PloegComponent } from './ploeg/ploeg.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
-
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';  
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';

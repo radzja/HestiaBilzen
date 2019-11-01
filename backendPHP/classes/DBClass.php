@@ -1,5 +1,6 @@
 <?php
 class DBClass {
+  // Absoluut pad naar de sqlite database file (met relatief pad werkte het bij mij niet):
   private static $DB_CONNECTIONSTRING = 'sqlite:/Users/stephenhermans/Documents/GitHub/HestiaBilzen/backendphp/HestiaBilzen.db';
   private static $DB_USERNAME = '';
   private static $DB_PASSWORD = '';
