@@ -1,6 +1,14 @@
 
   <app-header></app-header>
   <app-navbar></app-navbar>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+  </nav>
+
   <router-outlet></router-outlet>
   <app-sponsors></app-sponsors>
   <app-footer></app-footer>  

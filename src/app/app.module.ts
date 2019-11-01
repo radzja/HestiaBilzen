@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contactform/contactform.component';
+
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,23 +20,21 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 
 import { CommonModule } from '@angular/common';
-import { KalenderService } from './kalender/kalender.service';
-import { SporthalService } from './sporthallen/sporthal.service';
-import { SpelerService } from './ploeg/speler.service';
-import { RouteInfoComponent } from './route-info/route-info.component';
+import { LoginComponent } from './login/login.component';  
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { AlertComponent } from './_components';
 
-import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
-
-import { LoginComponent } from './login/login.component';
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers';
+import { RegisterComponent } from './register';
 import { AdminComponent } from './admin/admin.component';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactFormComponent,
-    PageNotFoundComponent,
+    
+    PageNotFoundComponent,  
     HomeComponent,
     NavbarComponent,
     FooterComponent,
@@ -47,10 +46,10 @@ import { AdminComponent } from './admin/admin.component';
     HeaderComponent,
     PloegComponent,
     ThankYouPageComponent,
-    RouteInfoComponent,
     LoginComponent,
+    RegisterComponent,
+    AlertComponent,
     AdminComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -60,14 +59,13 @@ import { AdminComponent } from './admin/admin.component';
     HttpClientModule,
     CommonModule,
   ],
-  providers: [KalenderService,             
-              SporthalService,
-              SpelerService,
-            
-              { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-              { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-              fakeBackendProvider
-            ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

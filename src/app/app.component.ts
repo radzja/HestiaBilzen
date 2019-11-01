@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthenticationService } from './_services';
+import { User } from './_models';
+import { Router } from '@angular/router';
+
+import './_content/app.less';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,7 @@ import { AuthenticationService } from './_services';
 export class AppComponent {
   title = 'HestiaBilzen';
 
-  currentUser: any;
+  currentUser: User;
 
     constructor(
         private router: Router,
