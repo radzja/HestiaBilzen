@@ -1,5 +1,6 @@
 <?php
 class DBClass {
+  // Absolute path to SQLite db file (doesn't work with a relative path), please change accordingly to run:
   private static $DB_CONNECTIONSTRING = 'sqlite:/Users/stephenhermans/Documents/GitHub/HestiaBilzen/backendphp/HestiaBilzen.db';
   private static $DB_USERNAME = '';
   private static $DB_PASSWORD = '';

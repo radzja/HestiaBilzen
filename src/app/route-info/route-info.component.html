@@ -1,1 +1,15 @@
-<p>route-info works!</p>
+<div>
+  <h1>Wedstrijd gaat door in :</h1>
+  <div class="flex-container">
+    <div>
+      <iframe [src]="this.transform(this.wedstrijdSporthal.mapsURL)" width="200px"
+              frameborder="1" style="border:1px solid #1f1f20;border-radius: 5px;" allowfullscreen="">
+      </iframe>
+    </div>
+    <div>
+      <h2>{{ wedstrijdSporthal.name }}</h2>
+      <p>{{ wedstrijdSporthal.street }}<br>{{ wedstrijdSporthal.city }}</p>
+      <p><i class="fa fa-phone"></i>{{ wedstrijdSporthal.phoneNumber }}</p>
+    </div>
+  </div>
+</div>

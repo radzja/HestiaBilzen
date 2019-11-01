@@ -17,7 +17,6 @@ import { HeaderComponent } from './header/header.component';
 import { PloegComponent } from './ploeg/ploeg.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
-
 import { CommonModule } from '@angular/common';
 import { KalenderService } from './kalender/kalender.service';
 import { SporthalService } from './sporthallen/sporthal.service';

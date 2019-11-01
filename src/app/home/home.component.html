@@ -23,28 +23,10 @@
         <!--Table-->
       </aside>
       <aside class="aside aside-2">
-
         <div *ngIf='hideLogo'>
-
          <img src="./assets/images/Hestia_Bilzen.png" class="img-responsive">
-
         </div>
-
-        <div *ngIf='showGmaps'>
-          <h1>Wedstrijd gaat door in :</h1>
-          <div class="flex-container">
-            <div>
-              <iframe [src]="this.mapsURL" width="200px" frameborder="1"
-              style="border:1px solid #1f1f20;border-radius: 5px;" allowfullscreen="">
-              </iframe>
-            </div>
-            <div>
-              <h2>{{ wedstrijdSporthal.name }}</h2>
-              <p>{{ wedstrijdSporthal.street }}<br>{{ wedstrijdSporthal.city }}</p>
-              <p><i class="fa fa-phone"></i>{{ wedstrijdSporthal.phoneNumber }}</p>
-            </div>
-          </div>
-        </div>
+        <app-route-info *ngIf="this.sporthalid > 0" [sporthalid]="this.sporthalid"></app-route-info>
       </aside>
     </div>
   </div>
