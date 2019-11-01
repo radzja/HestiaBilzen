@@ -7,8 +7,14 @@ import { DocumentenComponent } from './documenten/documenten.component';
 import { TeamsComponent } from './teams/teams.component';
 import { PloegComponent } from './ploeg/ploeg.component';
 import { ContactFormComponent } from './contactform/contactform.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { ThankYouPageComponent } from './thank-you-page/thank-you-page.component';
 import { PageNotFoundComponent } from './page-not-found.component';
+
+import { AuthGuard } from './_helpers';
+
+
 
 const routes: Routes = [
        { path: 'home', component: HomeComponent },
@@ -19,7 +25,9 @@ const routes: Routes = [
        { path: 'ploeg', component: PloegComponent },
        { path: 'contactform', component: ContactFormComponent},
        { path: 'thank-you-page', component: ThankYouPageComponent},
-       { path: '', redirectTo:  'home', pathMatch: 'full' },
+       { path: 'login', component: LoginComponent },
+       { path: 'register', component: RegisterComponent },
+       { path: '', component: HomeComponent, canActivate: [AuthGuard] },
        { path: '**', component: PageNotFoundComponent },
 ];
 
