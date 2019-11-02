@@ -9,13 +9,13 @@
         <div class="table-responsive">
           <table class="table table-sm table-borderless">
             <tbody>
-              <tr *ngFor = 'let wedstrijd of _wedstrijden'>
-                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.awayTeam | uppercase }}</td>
-                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.homeTeam | uppercase }}</td>
-                <td (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</td>
-                <td (click)='toggleGmaps(wedstrijd)'>om {{ wedstrijd.matchTime }}</td>
-                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
-                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
+              <tr *ngFor = 'let wedstrijd of _wedstrijden; let i = index' (id)='index'>
+                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd,i)'>{{ wedstrijd.awayTeam | uppercase }}</td>
+                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd,i)'>{{ wedstrijd.homeTeam | uppercase }}</td>
+                <td (click)='toggleGmaps(wedstrijd,i)'>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</td>
+                <td (click)='toggleGmaps(wedstrijd,i)'>om {{ wedstrijd.matchTime }}</td>
+                <td *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd,i)'>{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
+                <td *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd,i)'>Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
               </tr>
             </tbody>
           </table>
@@ -26,7 +26,7 @@
         <div *ngIf='hideLogo'>
          <img src="./assets/images/Hestia_Bilzen.png" class="img-responsive">
         </div>
-        <app-route-info *ngIf="this.sporthalid > 0" [sporthalid]="this.sporthalid"></app-route-info>
+        <app-route-info *ngIf="this.sporthalid > 0" [sporthalid]="this.sporthalid" (valueChange)='displayCounter($event)'></app-route-info>
       </aside>
     </div>
   </div>
