@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UploadService } from '../upload.service';
 
+// TO DO: Finish document upload component
 @Component({
   selector: 'app-documenten',
   templateUrl: './documenten.component.html',
