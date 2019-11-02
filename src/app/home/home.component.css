@@ -1,13 +1,13 @@
 h1 {
-  font-size: 36px;
+  font-size: 26px;
   color: #fff;
-  text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
+  text-shadow: -1.3px -1.3px 0 #3E3E3E, 1.3px -1.3px 0 #3E3E3E, -1.3px 1.3px 0 #3E3E3E, 1.3px 1.3px 0 #3E3E3E;
 }
 
 h2 {
   font-size: 25px;
-  color: #0069b2;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
+  color: #0088e6;
+  text-shadow: -1px -1px 0 #cecece, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
 }
 
 h5 {
@@ -60,7 +60,7 @@ td {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   color: white;
-  text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
+  text-shadow: -1.2px -1.2px 0 #3E3E3E, 1.2px -1.2px 0 #3E3E3E, -1.2px 1.2px 0 #3E3E3E, 1.2px 1.2px 0 #3E3E3E;
   font-size: 16px;
 }
 

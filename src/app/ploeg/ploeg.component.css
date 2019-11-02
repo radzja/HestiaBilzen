@@ -1,7 +1,7 @@
 h2 {
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;
-  color: #4e4e4e;
+  color: #131313;
 }
 
 .lead {
@@ -9,7 +9,7 @@ h2 {
   line-height: 24px;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
-  color: #4e4e4e;
+  color: #131313;
   margin: 10px;
 }
 
@@ -26,7 +26,13 @@ h2 {
 }
 
 .img-responsive {
-    display: block;
-    height: auto;
-    max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.table-sm td:not(:first-child):not(:last-child), .table-sm th:not(:first-child):not(:last-child) {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
 }

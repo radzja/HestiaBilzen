@@ -70,4 +70,11 @@ a:focus {
 
 body {
   padding: 0.3ng em;
+  background-color: #D0D0D0!important;
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1270px;
+  }
 }
