@@ -21,11 +21,11 @@
         <tr *ngFor = 'let wedstrijd of _wedstrijden'>
             <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</td>
             <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
-            <td>{{ wedstrijd.matchDate}}</td>
+            <td>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</td>
             <td>om {{ wedstrijd.matchTime }}</td>
             <td>{{ wedstrijd.code}}</td>
-            <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
-            <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | titlecase }}</td>
+            <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</td>
+            <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</td>
           </tr>
       </tbody>
     </table>

@@ -1,39 +1,59 @@
-.kalender-page-wrapper {
+/* .kalender-page-wrapper {
   margin: 15px;
-}
+} */
 
 h2 {
   font-size: 36px;
   margin-bottom: 20px;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
-  color: #4e4e4e;
+  color: #1E1E1E;
 }
 
 .lead {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
-    color: #4e4e4e;
-  }
-  
-  p {
-    display: block;
-  }
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: #1E1E1E;
+}
 
-  a {
-    color:#007bff;
-  }
+p {
+  display: block;
+}
+
+a {
+  color:#007bff;
+}
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .row {
-     width: 100%;
-  }
+  width: 100%;
+}
 
-table{
+table {
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+table .table-primary {
   text-transform: uppercase;
+}
+
+.table td:not(:first-child):not(:last-child), .table th:not(:first-child):not(:last-child) {
+  padding-left: .18rem;
+  padding-right: .18rem;
+}
+
+.table td:first-child, .table th:first-child {
+  padding-left: .15rem;
+  padding-right: .3rem;
+}
+
+.table td:last-child, .table th:last-child {
+  padding-left: .3rem;
+  padding-right: .05rem;
 }
