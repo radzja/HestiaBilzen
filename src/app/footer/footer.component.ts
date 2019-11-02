@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+// TO DO: Finish document upload component
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
