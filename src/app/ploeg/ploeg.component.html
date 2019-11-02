@@ -1,22 +1,24 @@
 <div class="container">
   <div class="training d-flex justify-content-center">
-    <h2>1ste Ploeg Heren </h2>
+    <h2>1ste Ploeg Heren</h2>
   </div>
   <div class="lead d-flex justify-content-center">
     <div class="r_info">
-      <p>Trainer:<br>
-        Training: </p>
+      <p>Trainer:<br>Training:</p>
     </div>
     <div class="l_info">
-      <p>{{ trainer }} <br>
+      <p>{{ trainer }}<br>
         Maandag: 19u30 tot 21u<br>
         Dinsdag: 19u30 tot 21u<br>
-        Vrijdag: 18u30 tot 20u</p>
+        Vrijdag: 18u30 tot 20u
+      </p>
     </div>
   </div>
   <div>
     <img src="./assets/images/ploegen/1steploeg.png" class="img-responsive">
   </div>
+
+  <!-- TO DO: dit moet nog responsive gemaakt worden! -->
 
   <div class="container mt-3">
     <div class="d-flex mb-3">
@@ -42,7 +44,7 @@
                 <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
                 <td>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</td>
                 <td>om {{ wedstrijd.matchTime }}</td>
-                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</td>
+                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</td>
                 <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</td>
               </tr>
             </tbody>
