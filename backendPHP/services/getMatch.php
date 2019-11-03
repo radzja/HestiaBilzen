@@ -1,6 +1,5 @@
 <?php
-
-$dummyBackend = false;
+include '../config.php';
 
 if ($dummyBackend) {
   $matches = json_decode('{"code":"10063","matchDate":"2019-11-02","matchTime":"15:15","homeTeam":"VIOS","awayTeam":"U19-M","out":"1","sportshallId":"1"}');
