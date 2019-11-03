@@ -22,6 +22,8 @@ import { KalenderService } from './kalender/kalender.service';
 import { SporthalService } from './sporthallen/sporthal.service';
 import { SpelerService } from './ploeg/speler.service';
 import { RouteInfoComponent } from './route-info/route-info.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { RouteInfoComponent } from './route-info/route-info.component';
     PloegComponent,
     ThankYouPageComponent,
     RouteInfoComponent,
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
