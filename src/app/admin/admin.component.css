@@ -1,6 +1,28 @@
-button{
-    background: rgb(1, 29, 51);
-    border-color: transparent;
-    color: #fff;
-    cursor: pointer;
+.center {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.center h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e4e4e;
+  margin-top: 20px;
+  line-height: 2;
+}
+
+#photo {
+  margin-bottom: 40px;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+button {
+  background: #0069b2;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
 }
