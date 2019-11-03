@@ -18,17 +18,17 @@ h5 {
   font-size: 14px;
 }
 
-tr:hover {
-  background-color:#0069b2;
-  cursor: pointer;
-}
-
-td {
+.container {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   color: white;
   text-shadow: -1px -1px 0 #4e4e4e, 1px -1px 0 #4e4e4e, -1px 1px 0 #4e4e4e, 1px 1px 0 #4e4e4e;
   font-size: 16px;
+}
+
+.container>div:hover {
+  background-color: #0069b2;
+  cursor: pointer;
 }
 
 .img-responsive {
@@ -49,12 +49,13 @@ td {
   display: block !important;
   height: 730px;
 }
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.flex-container > div {
+.flex-container>div {
   margin: 10px;
   text-align: left;
   font-weight: 600;
