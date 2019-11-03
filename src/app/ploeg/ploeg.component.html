@@ -17,38 +17,29 @@
   <div>
     <img src="./assets/images/ploegen/1steploeg.png" class="img-responsive">
   </div>
-
-  <!-- TO DO: dit moet nog responsive gemaakt worden! -->
-
-  <div class="container mt-3">
-    <div class="d-flex mb-3">
-      <div class="p-2 mr-auto">
-        <h2>Spelers</h2>
-        <table class="table table-striped table-sm">
-          <tbody>
-            <tr *ngFor = 'let speler of _spelers'>
-              <td>{{ speler.name }}</td>
-              <td>{{ speler.stamNr }}</td>
-              <td>{{ speler.birthDate | date:'dd-MM-yy' }}</td>
-            </tr>
-          </tbody>
-        </table>
+  <div class='some-page-wrapper'>
+    <div class='row'>
+      <div class='column'>
+        <div class='left-column'>
+          <h2>Spelers</h2>
+          <div class="row" *ngFor = 'let speler of _spelers'>
+            <div class="col-sm-6 col-md-4">{{ speler.name }}</div>
+            <div class="col-sm-6 col-md-4">{{ speler.stamNr }}</div>
+            <div class="col-sm-6 col-md-4">{{ speler.birthDate }}</div>
+          </div>
+        </div>
       </div>
-      <div class="p-2 ">
-        <h2>Wedstrijden</h2>
-        <div class="table-responsive">
-          <table class="table table-sm table-borderless">
-            <tbody>
-                <tr *ngFor = 'let wedstrijd of _wedstrijden'>
-                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</td>
-                <td *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</td>
-                <td>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</td>
-                <td>om {{ wedstrijd.matchTime }}</td>
-                <td *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</td>
-                <td *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class='column'>
+        <div class='right-column'>
+          <h2>Wedstrijden</h2>
+          <div class="row" *ngFor = 'let wedstrijd of _wedstrijden'>
+            <div class="col-sm-6 col-md-2" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</div>
+            <div class="col-sm-6 col-md-2" *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</div>
+            <div class="col-sm-6 col-md-3">{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</div>
+            <div class="col-sm-6 col-md-2">om {{ wedstrijd.matchTime }}</div>
+            <div class="col-sm-6 col-md-5" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</div>
+            <div class="col-sm-6 col-md-5" *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</div>
+          </div>
         </div>
       </div>
     </div>
