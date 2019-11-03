@@ -32,7 +32,36 @@ h2 {
   max-width: 100%;
 }
 
-.table-sm td:not(:first-child):not(:last-child), .table-sm th:not(:first-child):not(:last-child) {
-  padding-right: 0.8em;
-  padding-left: 0.8em;
+.some-page-wrapper {
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.left-column {
+  height: 100%;
+  width: 80%;
+}
+
+.right-column {
+  height: 100%;
+}
+
+.row:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+.row:nth-of-type(even) {
+  background-color: lightskyblue;
 }
