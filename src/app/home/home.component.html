@@ -7,7 +7,7 @@
           <h5>Wedstrijden voor deze week: </h5>
         </div>
           <div class="container">
-            <div class="row" *ngFor='let wedstrijd of _wedstrijden; let i = index' [id]='"match-" + i' [ngClass]="(i==selectedMatchIndex)?'row bg-primary':'row'">
+            <div class="row" *ngFor='let wedstrijd of _wedstrijden; let i = index' [id]='"match-" + i' [ngClass]="(i==selectedMatchIndex)?'row row-selected':'row'">
               <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(i)'>
                 {{ wedstrijd.awayTeam | uppercase }}</div>
               <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(i)'>

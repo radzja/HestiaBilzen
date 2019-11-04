@@ -26,8 +26,9 @@ h5 {
   font-size: 16px;
 }
 
-.container>div:hover {
-  background-color: #0069b2;
+.container>div:hover, .row-selected {
+  border-radius: 6px;
+  background: #0069b2;
   cursor: pointer;
 }
 
@@ -80,7 +81,7 @@ h5 {
   margin-top: 100px;
   margin-left: 20px;
   margin-right: 20px;
-  max-width: 550px;
+  width: 560px;
   padding-left: 10px;
 }
 
