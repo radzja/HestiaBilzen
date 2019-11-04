@@ -5,30 +5,31 @@ import { IWedstrijden } from '../wedstrijden';
 
 @Injectable()
 export class KalenderService {
+  remoteHost = 'https://www.hestiabilzen.be/backendPHP/';
   // tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient) { }
 
   getWedstrijden(): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getMatches.php'
+      this.remoteHost + 'services/getMatches.php'
     );
   }
 
   getWedstrijdenPerTeam(team: string): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getMatchesByTeam.php?team=' + encodeURIComponent(team)
+      this.remoteHost + 'services/getMatchesByTeam.php?team=' + encodeURIComponent(team)
     );
   }
 
   getWedstrijd(code: string): Observable<IWedstrijden> {
     return this._http.get<IWedstrijden>(
-      'http://localhost:3000/services/getMatch.php?code=' + encodeURIComponent(code)
+      this.remoteHost + 'services/getMatch.php?code=' + encodeURIComponent(code)
     );
   }
 
   getKomendeWedstrijden(): Observable<IWedstrijden[]> {
     return this._http.get<IWedstrijden[]>(
-      'http://localhost:3000/services/getUpcomingMatches.php'
+      this.remoteHost + 'services/getUpcomingMatches.php'
     );
   }
 }

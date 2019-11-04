@@ -5,17 +5,20 @@ import { ISporthal } from '../sporthal';
 
 @Injectable()
 export class SporthalService {
+
+  remoteHost = 'https://www.hestiabilzen.be/backendPHP/';
+
   constructor(private _http: HttpClient) { }
 
   getSporthallen(): Observable<ISporthal[]> {
     return this._http.get<ISporthal[]>(
-      'http://localhost:3000/services/getSportsHalls.php'
+      this.remoteHost + 'services/getSportsHalls.php'
     );
   }
 
   getSporthal(id: number): Observable<ISporthal> {
     return this._http.get<ISporthal>(
-      'http://localhost:3000/services/getSportsHall.php?id=' + encodeURIComponent(id)
+      this.remoteHost + 'services/getSportsHall.php?id=' + encodeURIComponent(id)
     );
   }
 }

@@ -35,7 +35,7 @@ export class RouteInfoComponent implements OnChanges {
     this.sporthalService.getSporthal(this.sporthalid)
         .subscribe((sporthal: ISporthal) =>
         this.wedstrijdSporthal = sporthal);
-    console.log('Sanitized mapsURL: ' + this.mapsURL);
+    // console.log('Sanitized mapsURL: ' + this.mapsURL);
   }
 
   transform(url) {

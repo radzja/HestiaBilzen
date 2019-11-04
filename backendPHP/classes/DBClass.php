@@ -7,7 +7,7 @@ class DBClass {
   private static $db = null;
   private static $instance = null;   // Singleton instance variable
 
-  private function __construct() {
+  public function __construct() {
     $absPath = substr(dirname(__FILE__), 0, -8);    // Absolute path to local SQLite database at "/backendPHP/HestiaBilzen.db"
     self::$DB_CONNECTIONSTRING = 'sqlite:' . $absPath . '/HestiaBilzen.db';
   }
