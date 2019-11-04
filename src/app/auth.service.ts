@@ -7,16 +7,16 @@ import { User } from './user';
 export class AuthService {
 
   constructor() { }
-  public login(userInfo: User){
-    localStorage.setItem('ACCESS_TOKEN', "access_token");
+
+  public login(userInfo: User) {
+    localStorage.setItem('ACCESS_TOKEN', 'access_token');
   }
 
-  public isLoggedIn(){
+  public isLoggedIn() {
     return localStorage.getItem('ACCESS_TOKEN') !== null;
-
   }
 
-  public logout(){
+  public logout() {
     localStorage.removeItem('ACCESS_TOKEN');
   }
 }

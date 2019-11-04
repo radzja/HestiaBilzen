@@ -3,28 +3,32 @@ import { SporthalService } from '../sporthallen/sporthal.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ISporthal } from '../sporthal';
 
-// TO DO: Add a previous- & next-match button to route-info (using @output)
 @Component({
   selector: 'app-route-info',
   templateUrl: './route-info.component.html',
   styleUrls: ['../home/home.component.css']
 })
 export class RouteInfoComponent implements OnChanges {
+  wedstrijdSporthal: ISporthal;
+  mapsURL: SafeResourceUrl;
+
+  constructor(private sporthalService: SporthalService, private sanitizer: DomSanitizer) {}
 
   // tslint:disable-next-line: no-input-rename
-  @Input('sporthalid') sporthalid;
+  @Input('sportshallId') sporthalid = 1;
   getsporthalid: number;
 
   // tslint:disable-next-line: no-output-rename
-  @Output() nextMatch = new EventEmitter();
-  valueChanged() { // You can give any function name
-      this.nextMatch.emit();
+  @Output('changeMatch')changeMatch: EventEmitter<string> = new EventEmitter();
+
+  nextMatch() { // You can give any function name
+    console.log('EventEmitter nextMatch() triggered');
+    this.changeMatch.emit('next');
   }
 
-  private wedstrijdSporthal: ISporthal;
-  mapsURL: SafeResourceUrl;
-
-  constructor(private sporthalService: SporthalService, private sanitizer: DomSanitizer) {
+  prevMatch() {
+    console.log('EventEmitter prevMatch() triggered');
+    this.changeMatch.emit('prev');
   }
 
   ngOnChanges() {

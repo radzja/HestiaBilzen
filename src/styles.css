@@ -1,13 +1,9 @@
 body {
-  padding: 0.3ng em;
-  
+  padding: 0.3em;
+  background: #212529;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   color: #4e4e4e;
@@ -15,12 +11,10 @@ h5 {
 
 h1 {
   font-size: 36px;
-  color: #fff;
 }
 
 h2 {
   font-size: 20px;
-  color: #fff;
 }
 
 h3 {
@@ -32,7 +26,6 @@ h3 {
 
 h4 {
   font-size: 30px;
-  color: #fff;
 }
 
 a {
@@ -46,7 +39,6 @@ a:focus {
 
 /********** Begin media instellingen **********/
 
-
 @media all and (min-width: 576px) {
   .aside {
     flex: 1 0 0;
@@ -54,7 +46,6 @@ a:focus {
 }
 
 @media all and (min-width: 768px) {
-
   .aside-1 {
     order: 1;
   }
@@ -71,8 +62,6 @@ a:focus {
     order: 4;
   }
 }
-
-
 
 @media (min-width: 1300px) {
   .container {

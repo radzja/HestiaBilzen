@@ -23,9 +23,9 @@
         <div class='left-column'>
           <h2>Spelers</h2>
           <div class="row" *ngFor = 'let speler of _spelers'>
-            <div class="col-sm-6 col-md-4">{{ speler.name }}</div>
-            <div class="col-sm-6 col-md-4">{{ speler.stamNr }}</div>
-            <div class="col-sm-6 col-md-4">{{ speler.birthDate }}</div>
+            <div class="col-sm-1 col-md-6">{{ speler.name }}</div>
+            <div class="col-sm-1 col-md-2">{{ speler.stamNr }}</div>
+            <div class="col-sm-1 col-md-3">{{ speler.birthDate | date:'dd-MM-yy' }}</div>
           </div>
         </div>
       </div>
@@ -33,12 +33,12 @@
         <div class='right-column'>
           <h2>Wedstrijden</h2>
           <div class="row" *ngFor = 'let wedstrijd of _wedstrijden'>
-            <div class="col-sm-6 col-md-2" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</div>
-            <div class="col-sm-6 col-md-2" *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</div>
-            <div class="col-sm-6 col-md-3">{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</div>
-            <div class="col-sm-6 col-md-2">om {{ wedstrijd.matchTime }}</div>
-            <div class="col-sm-6 col-md-5" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</div>
-            <div class="col-sm-6 col-md-5" *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</div>
+            <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.awayTeam | uppercase }}</div>
+            <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '0'">{{ wedstrijd.homeTeam | uppercase }}</div>
+            <div class="col-md-1 match-date">{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</div>
+            <div class="col-sm-1 col-md-2">om {{ wedstrijd.matchTime }}</div>
+            <div class="col-sm-1 col-md-5" *ngIf="wedstrijd.out == '1'">{{ wedstrijd.homeTeam | uppercase }} - Hestia Bilzen</div>
+            <div class="col-sm-1 col-md-5" *ngIf="wedstrijd.out == '0'">Hestia Bilzen - {{ wedstrijd.awayTeam | uppercase }}</div>
           </div>
         </div>
       </div>

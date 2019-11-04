@@ -1,7 +1,7 @@
 h2 {
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;
-  color: #131313;
+  color: #F9F9F9;
 }
 
 .lead {
@@ -9,7 +9,7 @@ h2 {
   line-height: 24px;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
-  color: #131313;
+  color: #E0E0E0;
   margin: 10px;
 }
 
@@ -33,13 +33,19 @@ h2 {
 }
 
 .some-page-wrapper {
-  margin: 10px;
+  margin: 20px 15px 20px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background: #212529;
+  color: #E0E0E0;
+}
+.some-page-wrapper > .row {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .column {
@@ -47,21 +53,46 @@ h2 {
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  background: #212529;
+}
+
+.column:first-child {
+  width: 40%;
+}
+
+.column:nth-child(2) {
+  width: 100%;
 }
 
 .left-column {
   height: 100%;
-  width: 80%;
+  max-width: 70%;
 }
 
 .right-column {
   height: 100%;
+  max-width: 100%;
 }
 
-.row:nth-of-type(odd) {
-  background-color: #fff;
+.right-column .row:nth-of-type(odd), .left-column .row:nth-of-type(odd) {
+  background-color: #404040;
 }
 
-.row:nth-of-type(even) {
-  background-color: lightskyblue;
+.right-colom .row:nth-of-type(even), .left-colom .row:nth-of-type(even) {
+  background-color: #656565;
+}
+
+.right-colom .col-md-2:first-child {
+  max-width: 75px;
+  padding-left: 5px;
+}
+
+.match-date {
+  min-width: 110px;
+}
+
+.right-colom .col-md-6 {
+  min-width: 350px;
+  padding-left: 4px;
+  padding-right: 5px;
 }

@@ -5,6 +5,7 @@ import { IWedstrijden } from '../wedstrijden';
 
 @Injectable()
 export class KalenderService {
+  // tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient) { }
 
   getWedstrijden(): Observable<IWedstrijden[]> {
@@ -30,11 +31,4 @@ export class KalenderService {
       'http://localhost:3000/services/getUpcomingMatches.php'
     );
   }
-
-  /* addState(name: string, code: string): Observable<boolean> {
-    return this._http.post<boolean>(
-      'http://localhost:3000/services/addState.php',
-      { name, code }
-    );
-  } */
 }

@@ -1,13 +1,18 @@
-/* .kalender-page-wrapper {
-  margin: 15px;
-} */
+.kalender-page-wrapper {
+  margin: 0 0 15px;
+}
+
+.container {
+  max-width: 80%;
+  flex: 1 1 20%;
+}
 
 h2 {
   font-size: 36px;
   margin-bottom: 20px;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
-  color: #1E1E1E;
+  color: #FEFEFE;
 }
 
 .lead {
@@ -15,7 +20,7 @@ h2 {
   line-height: 24px;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
-  color: #1E1E1E;
+  color: #D9D9D9;
 }
 
 p {
@@ -27,33 +32,62 @@ a {
 }
 
 .title {
+  background: #212529;
   text-align: center;
 }
 
 .row {
+  color: #D9D9D9;
   width: 100%;
 }
 
-table {
-  max-width: 92%;
-  margin: 0 auto;
+.col-md-1, .col-md-2 {
+  padding-right: 7px;
+  padding-left: 7px;
 }
 
-table .table-primary {
+.col-md-1:first-child {
+  padding-right: 4px;
+  padding-left: 5px;
+}
+
+.col-md-4 {
+  padding-right: 5px;
+  padding-left: 22px;
+  min-width: 360px;
+  flex: 0 0 33.5%;
+}
+
+.row:first-child {
+  background-color: #202020;
+  color: #FFF;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-.table td:not(:first-child):not(:last-child), .table th:not(:first-child):not(:last-child) {
-  padding-left: .18rem;
-  padding-right: .18rem;
+.row:nth-of-type(odd):not(:first-child) {
+  background-color: #404040;
 }
 
-.table td:first-child, .table th:first-child {
-  padding-left: .15rem;
-  padding-right: .3rem;
+.row:nth-of-type(even) {
+  background-color: #656565;
 }
 
-.table td:last-child, .table th:last-child {
-  padding-left: .3rem;
-  padding-right: .05rem;
-}
+  .row .col-md-1:first-child {
+    min-width: 70px;
+  }
+
+  .row .col-md-1:nth-child(2) {
+    min-width: 90px;
+  }
+
+  .row .col-md-2 {
+    flex: 0 0 13.5%;
+    min-width: 95px;
+  }
+
+  @media (max-width: 576px) {
+    .col-md-1, .col-md-2, .col-md-4, .col-md-1:first-child {
+      padding-left: 8px;
+    }
+  }

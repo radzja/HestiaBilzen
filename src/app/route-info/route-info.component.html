@@ -10,8 +10,8 @@
       <h2>{{ wedstrijdSporthal.name }}</h2>
       <p>{{ wedstrijdSporthal.street }}<br>{{ wedstrijdSporthal.city }}</p>
       <p><i class="fa fa-phone"></i>&nbsp;{{ wedstrijdSporthal.phoneNumber }}</p>
+      <button class='btn-sm btn-primary float-left' (click)="this.prevMatch()">Vorige</button>
+      <button class='btn-sm btn-primary float-right' (click)="this.nextMatch()">Volgende</button>
     </div>
-    <button class='btn-sm btn-primary' (click)="prevMatch()">Vorige match</button>
-    <button class='btn-sm btn-primary' (click)="nextMatch()">Volgende match</button>
   </div>
 </div>

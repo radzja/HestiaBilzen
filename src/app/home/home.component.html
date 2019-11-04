@@ -6,27 +6,27 @@
           <h1>Fijn dat u ons gevonden heeft!</h1>
           <h5>Wedstrijden voor deze week: </h5>
         </div>
-        <div class="container">
-          <div class="row" *ngFor='let wedstrijd of _wedstrijden'>
-            <div class="col-md-2" *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>
-              {{ wedstrijd.awayTeam | uppercase }}</div>
-            <div class="col-md-2" *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>
-              {{ wedstrijd.homeTeam | uppercase }}</div>
-            <div class="col-md-2" (click)='toggleGmaps(wedstrijd)'>{{ wedstrijd.matchDate}}</div>
-            <div class="col-md-2" (click)='toggleGmaps(wedstrijd)'>om {{ wedstrijd.matchTime }}</div>
-            <div class="col-md-6" *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(wedstrijd)'>
-              {{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</div>
-            <div class="col-md-6" *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(wedstrijd)'>Hestia Bilzen -
-              {{ wedstrijd.awayTeam | titlecase }}</div>
+          <div class="container">
+            <div class="row" *ngFor='let wedstrijd of _wedstrijden; let i = index' [id]='"match-" + i' [ngClass]="(i==selectedMatchIndex)?'row bg-primary':'row'">
+              <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(i)'>
+                {{ wedstrijd.awayTeam | uppercase }}</div>
+              <div class="col-sm-1 col-md-2" *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(i)'>
+                {{ wedstrijd.homeTeam | uppercase }}</div>
+              <div class="col-sm-auto col-md-2" (click)='toggleGmaps(i)'>{{ wedstrijd.matchDate | date:'dd-MM-yy' }}</div>
+              <div class="col-sm-1 col-md-2" (click)='toggleGmaps(i)'>om {{ wedstrijd.matchTime }}</div>
+              <div class="col-sm-1 col-md-auto" *ngIf="wedstrijd.out == '1'" (click)='toggleGmaps(i)'>
+                {{ wedstrijd.homeTeam | titlecase }} - Hestia Bilzen</div>
+              <div class="col-sm-1 col-md-auto" *ngIf="wedstrijd.out == '0'" (click)='toggleGmaps(i)'>Hestia Bilzen -
+                {{ wedstrijd.awayTeam | titlecase }}</div>
+            </div>
           </div>
-        </div>
-        <!--Table-->
       </aside>
       <aside class="aside aside-2">
         <div *ngIf='hideLogo'>
          <img src="./assets/images/Hestia_Bilzen.png" class="img-responsive">
         </div>
-        <app-route-info *ngIf="this.sporthalid > 0" [sporthalid]="this.sporthalid" (valueChange)='displayCounter($event)'></app-route-info>
+        <!-- output variable: sporthallid & input variable-->
+        <app-route-info *ngIf="this.sportshallId > 0" [sportshallId]="this.sportshallId" (changeMatch)='switchMatch($event)'></app-route-info>
       </aside>
     </div>
   </div>

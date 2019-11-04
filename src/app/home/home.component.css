@@ -72,14 +72,15 @@ h5 {
 
 .aside-1 {
   margin-top: 100px;
-  margin-left: 60px;
-  width: 550px;
+  margin-left: 10px;
+  max-width: 640px;
 }
 
 .aside-2 {
   margin-top: 100px;
-  margin-right: 60px;
-  width: 550px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 550px;
   padding-left: 10px;
 }
 
