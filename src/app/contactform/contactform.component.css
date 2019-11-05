@@ -89,8 +89,6 @@ a {
 }
 
 
-
-
 select,
 option,
 input,
@@ -99,7 +97,7 @@ textarea,
 button {
   padding: 0.2rem 1rem;
   font-size: 1.2rem;
-  color: inherit;
+  color: White;
 }
 
 .form-box {
