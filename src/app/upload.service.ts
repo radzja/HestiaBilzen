@@ -7,10 +7,11 @@ import { map } from 'rxjs/operators';
 })
 export class UploadService {
 
-  SERVER_URL = 'http://localhost:3000';
+  remoteHost = 'https://www.hestiabilzen.be/backendPHP/';
+
   constructor(private httpClient: HttpClient) { }
   public upload(data) {
-    const uploadURL = `${this.SERVER_URL}/services/upload.php`;
+    const uploadURL = `${this.remoteHost}services/upload.php`;
 
     return this.httpClient.post<any>(uploadURL, data, {
       reportProgress: true,

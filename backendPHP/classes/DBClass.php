@@ -19,7 +19,7 @@ class DBClass {
     return self::$instance;
   }
 
-  public function getCONNECTIONSTRING() {
+  public static function getCONNECTIONSTRING() {
     return self::$DB_CONNECTIONSTRING;
   }
 
