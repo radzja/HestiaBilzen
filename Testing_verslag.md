@@ -1,4 +1,4 @@
-# Testing verslag {vereisten}
+# Testing verslag (vereisten)
 
     ## Introductie over wat je hebt gemaakt voor een buitenstaander:
         * Beschrijving project
