@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { AuthService } from '../auth.service';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   get formControls() { return this.loginForm.controls; }
 
-  login(){
+  login() {
     console.log(this.loginForm.value);
     this.isSubmitted = true;
     if (this.loginForm.invalid) {
