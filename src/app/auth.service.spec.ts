@@ -6,55 +6,45 @@ describe('AuthService', () => {
   let service: AuthService;
   beforeEach(() => {
     service = new AuthService();
-    // TestBed.configureTestingModule();
-    // this.service
-    service.logout();
-  }
-  ); // TestBed.configureTestingModule({}));
+    service.logout(); // Always call logout before running any tests (to set the state to the correct initiation state)
+    }
+  );
 
-  it('isLoggedIn should be false to start with', () => {
-    // const service: AuthService = new AuthService();
+  // Test if state at initiation is correct, isLoggedIn => should return false
+  it('isLoggedIn should return false to start with', () => {
     // Act
     expect(service.isLoggedIn()).toBeFalsy();
   });
 
-  /* it('isLoggedIn should be true after successful authentication', () => {
-    // Arrange
-    let formBuilder: FormBuilder;
-    const loginForm: FormGroup = formBuilder.group({
+  // Test if the user is logged in after a successful login.
+  it('isLoggedIn should return true after a successful login', () => {
+    // Arrange simulated input in login form
+    const formBuilder = new FormBuilder();
+    const loginForm  =  formBuilder.group({
       email: ['hermans.stephen@gmail.com'],
       password: ['123456789']
     });
-    this.service.login(loginForm);
 
-    // Act
-    expect(this.service.isLoggedIn()).toBeTruthy();
+    // Arrange a login with the simulated login form input
+    service.login(loginForm.value);
+
+    // Act: check if login was successful by calling method isLoggedIn => should return true
+    expect(service.isLoggedIn()).toBeTruthy();
   });
 
-  it('login & isLoggedIn should return true after successful authentication', () => {
-    // Arrange
-    let formBuilder: FormBuilder;
-    const loginForm: FormGroup = formBuilder.group({
-      email: ['hermans.stephen@gmail.com'],
-      password: ['123456789']
+  // Test if the user is not logged in after an unsuccessful login (using unauthorized credentials)
+  it('isLoggedIn should return false after a unsuccessful login', () => {
+    // Arrange simulated input in login form with unauthorized credentials
+    const formBuilder = new FormBuilder();
+    const loginForm  =  formBuilder.group({
+      email: ['user@wrong.com'],
+      password: ['notAuthorized']
     });
-    this.service.login(this.loginForm);
 
-    // Act
-    expect(this.service.login(this.loginForm)).toBeTruthy();
-    expect(this.service.isLoggedIn()).toBeTruthy();
+    // Arrange a login with the simulated login form input (unauthorized credentials)
+    service.login(loginForm.value);
+
+    // Act: check if login was unsuccessful by calling method isLoggedIn => should return false
+    expect(service.isLoggedIn()).toBeFalsy();
   });
-
-  it('login & isLoggedIn should return false after authentication with incorrect credentials', () => {
-    // Arrange
-    let formBuilder: FormBuilder;
-    const loginForm: FormGroup = formBuilder.group({
-      email: ['unauthorized@user.be'],
-      password: ['123456789']
-    });
-
-    // Act
-    expect(this.service.login(this.loginForm)).toBeFalsy();
-    expect(this.service.isLoggedIn()).toBeFalsy();
-  }); */
 });
