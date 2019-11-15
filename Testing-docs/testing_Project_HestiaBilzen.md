@@ -88,24 +88,20 @@ Op de Homepagina voorzien we de komende wedstijden van de week in de linkse kolo
 
 **1. Homepagina**
 
-1.
-  1. 1.2.Doelpubliek
+1.2. Doelpubliek
 
 Handballiefhebbers, leden van Hestia Bilzen, bezoekers.
 
-1.
-  1. 1.3.Samenwerking
+1.3. Samenwerking
 
 Codering en testing door Stephen Hermans en Frank Martens
 Usability informatie gevraagd aan leden / gebruikers van de website en via de tool van HotJar
 
 **Wireframing van het project**
 
+2. Unit testen Login Formulier
 
-1. 2.Unit testen Login Formulier
-
-1.
-  1. 2.1.Isolated test:
+2.1. Isolated test:
 
 Zorg ervoor dat het onderdeel met succes is gemaakt (Boilerplate Test Case)
 
